@@ -52,9 +52,9 @@ class Gallery extends Component {
 
     return (
       <div>
-        <div className="grid-test" style={{gridTemplateColumns: 'repeat(auto-fit, '+(gallery_column_width - 30)+'px)'}}>
+        <div className="grid-test">
           {this.props.images.map((image, index) => (
-            <div key={image.photo.childImageSharp.grid.src} style={{width: gallery_column_width - 30, gridRowEnd: 'span '+(Math.floor((gallery_column_width / image.photo.childImageSharp.grid.aspectRatio + 30) / 60) + 0)}}>
+            <div key={image.photo.childImageSharp.grid.src}>
               <div onClick={() => this.setState({ photoIndex: index, isOpen: true })}>
                 <Img fluid={image.photo.childImageSharp.grid} alt={image.alt} title={image.alt} imgStyle={{objectFit: 'contain'}} />
               </div>
