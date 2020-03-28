@@ -7,19 +7,7 @@ import config from "../../data/SiteConfig";
 
 import "./about.css";
 
-function wrapWords(str, tmpl) {
-  return str.replace(/\w+/g, tmpl || "<span aria-hidden='true'>$&</span>");
-}
-
-function createMarkup(string) {
-  let title = wrapWords(string);
-  return {__html: title};
-}
-
-function format_paras(text) {
-  let newText = text.split ('\n').map ((item, i) => (item) ? <p key={i}>{item}</p> : '');
-  return newText;
-}
+import { createMarkup } from "../_helpers/helpers.js";
 
 class AboutPage extends Component {
   render() {

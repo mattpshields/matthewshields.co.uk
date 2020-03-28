@@ -5,34 +5,9 @@ import Img from "gatsby-image";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
 import { Link } from "gatsby";
+import PostListing from "../components/PostListing/PostListing";
 
-function wrapWords(str, tmpl) {
-  return str.replace(/\w+/g, tmpl || "<span aria-hidden='true'>$&</span>");
-}
-
-function createMarkup(text) {
-  let title = '';
-
-  if(Array.isArray(text)) {
-    let title_array = [];
-    for (let index = 0; index < text.length; index++) {
-      const element = text[index];
-      title_array.push(wrapWords(element));
-    }
-    title = title_array.join('<br / >');
-  } else {
-    title = wrapWords(text);
-  }
-  return {__html: title};
-}
-
-function format_date(date) {
-  var d = new Date(date);
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-"July", "August", "September", "October", "November", "December"
-];
-  return d.getDate()+' '+monthNames[d.getMonth()]+' '+d.getFullYear();
-}
+import { createMarkup, format_date } from "../_helpers/helpers.js";
 
 class Home extends Component {
   render() {
@@ -60,21 +35,8 @@ class Home extends Component {
           <div className="content-section">
             <h2>Recent Posts</h2>
             <p>As part of trying to get better at writing there's only one way and that's practice...</p>
-            
-              
-              {data.allMarkdownRemark.edges.length > 0 ? (
-                <div className="content-section">
-                  {data.allMarkdownRemark.edges.map(post => (
-                    <div className="project-list__single" key={post.node.fields.slug}>
-                      <Link className="no-icon" to={post.node.fields.slug}>
-                        <h3 className="project-list__title">{post.node.frontmatter.title}</h3>
-                      </Link>
-                      <p>{post.node.frontmatter.short_description}</p>
-                      <footer aria-label="Post date" className="project-list__footer">{format_date(post.node.frontmatter.date)}</footer>
-                    </div>
-                  ))}
-                </div>
-              ) : false}
+                          
+            <PostListing postEdges={data.allMarkdownRemark.edges} linkPage={true} displayReadingTime={true} />
             
           </div>
         </div>
@@ -97,13 +59,14 @@ export const query = graphql`
     allMarkdownRemark(
       limit: 3,
       sort: { order: DESC, fields: [frontmatter___date] },
-      filter: {fileAbsolutePath: {regex: "/(content)/.*\\.md$/"}}
+      filter: {fileAbsolutePath: {regex: "/(content/writing)/.*\\.md$/"}}
     ) {
       edges {
         node {
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             title
             short_description

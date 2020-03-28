@@ -7,14 +7,7 @@ import config from "../../data/SiteConfig";
 import PostListing from "../components/PostListing/PostListing";
 import "./photography.css";
 
-function wrapWords(str, tmpl) {
-  return str.replace(/\w+/g, tmpl || "<span>$&</span>");
-}
-
-function createMarkup(string) {
-  let title = wrapWords(string);
-  return {__html: title};
-}
+import { createMarkup } from "../_helpers/helpers.js";
 
 class Home extends Component {
   render() {

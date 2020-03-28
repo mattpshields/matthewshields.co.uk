@@ -8,14 +8,7 @@ import "./album.css";
 // import Gallery from "../components/Gallery/Gallery";
 import Loadable from 'react-loadable';
 
-function wrapWords(str, tmpl) {
-  return str.replace(/\w+/g, tmpl || "<span>$&</span>");
-}
-
-function createMarkup(string) {
-  let title = wrapWords(string);
-  return {__html: title};
-}
+import { createMarkup } from "../_helpers/helpers.js";
 
 const LoadableBar = Loadable({
   loader: () => import('../components/Gallery/Gallery'),
@@ -32,18 +25,6 @@ export default class PostTemplate extends React.Component {
       this.state = {
         in_browser: false
       }
-
-      // this.fetch_book = this.fetch_book.bind(this);
-  }
-
-  lock_down_scroll() {
-    // if(in_view) {
-    //   document.body.classList.add("no-scroll");
-    // }
-  }
-
-  open_scroll() {
-    // document.body.classList.remove("no-scroll");
   }
 
   componentDidMount() {

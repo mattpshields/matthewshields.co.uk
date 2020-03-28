@@ -2,13 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 
-function format_date(date) {
-  var d = new Date(date);
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-"July", "August", "September", "October", "November", "December"
-];
-  return d.getDate()+' '+monthNames[d.getMonth()]+' '+d.getFullYear();
-}
+import { format_date } from "../../_helpers/helpers.js";
 
 class PostListing extends React.Component {
   getPostList() {
@@ -19,7 +13,7 @@ class PostListing extends React.Component {
         url: postEdge.node.frontmatter.link_url,
         cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
-        date: format_date(postEdge.node.fields.date),
+        date: format_date(postEdge.node.frontmatter.date),
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead,
         short_description: postEdge.node.frontmatter.short_description
