@@ -12,3 +12,9 @@ slug: how-i-configured-netlify-cms
 * Media folders per post type
 * editorial workflow
 * Navigation management
+
+As a new user of Netlify CMS and the JAMstack approach I've been blown away by the power behind this simple to use static CMS.
+
+If you aren't aware of Netlify CMS it is a static, no-database content management system, which works through the creation and editing of files in Markdown, YAML or JSON to name a few options. This is a perfect partner when it comes to any number of static site generators like Gatsby, Jekkyl or NextJS thanks to their platform agnostic approach. When combined with hosting on net
+
+## Simple but configurable
