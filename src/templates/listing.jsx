@@ -84,7 +84,7 @@ export const listingQuery = graphql`
   query ListingQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {fileAbsolutePath: {regex: "/(content)/.*\\.md$/"}}
+      filter: {fileAbsolutePath: {regex: "/(content/writing)/.*\\.md$/"}}
       limit: $limit
       skip: $skip
     ) {
