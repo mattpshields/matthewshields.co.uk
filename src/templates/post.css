@@ -1,0 +1,17 @@
+.post-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+blockquote {
+  margin: 30px 0;
+  background: #f7f7f7;
+  padding: 10px 30px;
+  border-left: 5px #ccc solid;
+}
+
+.post-content h2,
+.post-content h3 {
+  margin-top: 2em;
+}
