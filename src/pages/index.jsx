@@ -5,6 +5,7 @@ import Img from "gatsby-image";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
 import { Link } from "gatsby";
+import PostListing from "../components/PostListing/PostListing";
 
 import { createMarkup, format_date } from "../_helpers/helpers.js";
 
@@ -34,21 +35,8 @@ class Home extends Component {
           <div className="content-section">
             <h2>Recent Posts</h2>
             <p>As part of trying to get better at writing there's only one way and that's practice...</p>
-            
-              
-              {data.allMarkdownRemark.edges.length > 0 ? (
-                <div className="content-section">
-                  {data.allMarkdownRemark.edges.map(post => (
-                    <div className="project-list__single" key={post.node.fields.slug}>
-                      <Link className="no-icon" to={post.node.fields.slug}>
-                        <h3 className="project-list__title">{post.node.frontmatter.title}</h3>
-                      </Link>
-                      <p>{post.node.frontmatter.short_description}</p>
-                      <footer aria-label="Post date" className="project-list__footer">{format_date(post.node.frontmatter.date)}</footer>
-                    </div>
-                  ))}
-                </div>
-              ) : false}
+                          
+            <PostListing postEdges={data.allMarkdownRemark.edges} linkPage={true} displayReadingTime={true} />
             
           </div>
         </div>
@@ -78,6 +66,7 @@ export const query = graphql`
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             title
             short_description
