@@ -29,7 +29,7 @@ const config = {
     },
     {
       label: "GitHub",
-      url: "https://github.com/MatthewShieldsW",
+      url: "https://github.com/MatthewShields",
       target: "_blank"
     },
     {
