@@ -1,12 +1,11 @@
 backend:
   name: github # Refer to https://www.netlifycms.org/docs/authentication-backends/ for auth backend list and instructions
-  branch: master # Branch to update
+  branch: pre-production # Branch to update
   repo: mattpshields/matthewshields.co.uk # Repo for pushing new commits. Make sure to replace with your repo!
 
 media_folder: static/assets
 public_folder: assets
 publish_mode: editorial_workflow
-branch: pre-production
 
 collections:
   - name: blog
