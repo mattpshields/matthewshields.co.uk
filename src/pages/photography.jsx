@@ -3,18 +3,10 @@ import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import Img from "gatsby-image";
 import Layout from "../layout";
-import config from "../../data/SiteConfig";
 import { Link } from "gatsby";
 import "./photography.css";
 
-function wrapWords(str, tmpl) {
-  return str.replace(/\w+/g, tmpl || "<span>$&</span>");
-}
-
-function createMarkup(string) {
-  let title = wrapWords(string);
-  return {__html: title};
-}
+import { createMarkup, wrapWords, format_paras } from "../_helpers/helpers.js";
 
 class Home extends Component {
   render() {
@@ -73,6 +65,7 @@ export default Home;
 export const query = graphql`
   query {
     allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: {fileAbsolutePath: {regex: "/(photography)/.*\\.md$/"}}
     ) {
       edges {
