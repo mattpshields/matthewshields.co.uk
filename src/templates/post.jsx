@@ -8,7 +8,7 @@ import SEO from "../components/SEO/SEO";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
 
-import { createMarkup, format_paras } from "../_helpers/helpers.js";
+import { createMarkup, format_date, format_paras } from "../_helpers/helpers.js";
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -38,6 +38,10 @@ export default class PostTemplate extends React.Component {
               <h1 className="hero__title hero__title--post" dangerouslySetInnerHTML={createMarkup(post.title)} />
               <div className="hero__description">
                 {format_paras(post.short_description)}
+                <footer aria-label="Post date" className="project-list__footer">
+                  <p>{format_date(postNode.frontmatter.date)}</p>
+                  <p>(Reading time: {postNode.timeToRead} minutes)</p>
+                </footer>
               </div>
             </div>
             {postNode.frontmatter.cover &&

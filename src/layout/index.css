@@ -195,6 +195,10 @@ img {
     margin: 1.5rem 0 -40px;
     max-width: 40%;
   }
+
+  .hero--noimg .hero__description {
+    max-width: 500px;
+  }
 }
 
 .call-out {
@@ -257,6 +261,7 @@ img {
 
 .project-list__footer {
   font-size: smaller;
+  color: #565656;
 }
 
 @media screen and (min-width: 600px) {
