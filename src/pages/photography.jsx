@@ -73,6 +73,7 @@ export default Home;
 export const query = graphql`
   query {
     allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: {fileAbsolutePath: {regex: "/(photography)/.*\\.md$/"}}
     ) {
       edges {
