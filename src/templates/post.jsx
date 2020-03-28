@@ -8,19 +8,7 @@ import SEO from "../components/SEO/SEO";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
 
-function wrapWords(str, tmpl) {
-  return str.replace(/\w+/g, tmpl || "<span>$&</span>");
-}
-
-function createMarkup(string) {
-  let title = wrapWords(string);
-  return {__html: title};
-}
-
-function format_paras(text) {
-  let newText = text.split ('\n').map ((item, i) => (item) ? <p key={i}>{item}</p> : '');
-  return newText;
-}
+import { createMarkup, format_paras } from "../_helpers/helpers.js";
 
 export default class PostTemplate extends React.Component {
   render() {
