@@ -23,6 +23,53 @@ collections:
       - { label: "Cover Image", name: "cover", widget: "image", required: false }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: pages
+    label: "Page"
+    folder: "content/pages"
+    media_folder: ''
+    public_folder: ''
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
+    fields:
+      - { label: "post_type", name: "post_type", widget: "hidden", default: "page" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Short Description", name: "short_description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Cover Image", name: "cover", widget: "image", required: false }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - label: 'Page Section'
+        name: 'sections'
+        widget: 'list'
+        types:
+          - label: 'Text Block'
+            name: 'text-block'
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: markdown }
+          - label: 'Block List'
+            name: 'block-list'
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: markdown }
+              - label: Sub Fields
+                name: sub_fields
+                widget: list
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Value, name: value, widget: string }
+          - label: 'Post List'
+            name: 'post-list'
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: markdown }
+              - label: Blog Posts
+                name: blog_posts
+                widget: list
+                fields:
+                  - { label: "Post", name: "post", widget: "relation", collection: "blog", searchFields: ["title"], valueField: "slug", displayFields: ["title"] }
   - name: photography
     label: "Photography"
     folder: "content/photography"
