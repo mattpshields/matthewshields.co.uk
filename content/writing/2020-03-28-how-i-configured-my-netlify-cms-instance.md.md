@@ -23,4 +23,4 @@ The Netlify CMS documentation gives you a great breakdown of <a href="<https://w
 
 ## Editorial Workflow
 
-I don't use this feature while in the initial build
+I don't use this feature while in the initial build phase as I think it slows me down, but as soon as I'm into the part where I am
