@@ -26,4 +26,16 @@ When building version one of my site though I knew I wanted pages to be differen
 
 After looking into the widget types built into Netlify CMS I couldn't find anything that quite catered for my needs. The closest was 'List' which gives you the ability to add a repeatable set of fields, but these fields are static and the same for each repetition. I could use 'List' and add every instance of field along with ability to pick which component to use, but as there isn't any conditional logic this would get awful to use really fast.
 
-On the Netlify CMS site they have a list of their beta features, in there I found exactly what I was after - <a href="<https://www.netlifycms.org/docs/beta-features/#list-widget-variable-types>" target="_blank">variable types</a>.
+On the Netlify CMS site they have a list of their beta features, and in there I found exactly what I was after - <a href="<https://www.netlifycms.org/docs/beta-features/#list-widget-variable-types>" target="_blank">variable types</a>. This would give me the ability to use a repeater like with 'List' but assign different fields to each type.
+
+This was easy to set up once I knew that it existed, unfortunately that came after a couple of hours of trying to build my own version of the ACF flexible content functionality as a Netlify CMS custom widget. But thats giving me ideas for another in a day challenge so nothing wasted!
+
+\[IMAGE OF CONFIG.YML]
+
+This then gives me the exact ability I wanted in the CMS as you can see above. Half the challenge done, now just to get this back into my Gatsby build and into the site. 
+
+The next step was figuring out how the GraphQL query would work with it when I don't know what fields a given page would be querying with which components I have used. For this its actually quite simple, I query for all fields across all of the various types.
+
+\[INSTANCE OF GRAPHQL]
+
+When this is returned I have an array of objects, one for each of the types that page had in the CMS, with only its relevant fields as part of that object. I will now be able use that array to loop through and
