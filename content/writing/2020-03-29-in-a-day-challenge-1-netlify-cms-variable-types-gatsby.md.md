@@ -30,7 +30,36 @@ On the Netlify CMS site they have a list of their beta features, and in there I 
 
 This was easy to set up once I knew that it existed, unfortunately that came after a couple of hours of trying to build my own version of the ACF flexible content functionality as a Netlify CMS custom widget. But thats giving me ideas for another in a day challenge so nothing wasted!
 
-\[IMAGE OF CONFIG.YML]
+```yaml
+  - name: pages
+    label: "Page"
+    folder: "content/pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
+    fields:
+      - label: 'Page Section'
+        name: 'sections'
+        widget: 'list'
+        types:
+          - label: 'Text Block'
+            name: 'text-block'
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: markdown }
+          - label: 'Carousel'
+            name: 'carousel'
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: markdown }
+              - label: 'Images'
+                name: images
+                widget: list
+                fields:
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: Image Description, name: alt, widget: string }
+```
 
 This then gives me the exact ability I wanted in the CMS as you can see above. Half the challenge done, now just to get this back into my Gatsby build and into the site. 
 
