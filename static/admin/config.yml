@@ -47,29 +47,18 @@ collections:
             fields:
               - { label: Title, name: title, widget: string }
               - { label: Text, name: text, widget: markdown }
-          - label: 'Block List'
-            name: 'block-list'
+          - label: 'Carousel'
+            name: 'carousel'
             widget: object
             fields:
               - { label: Title, name: title, widget: string }
               - { label: Text, name: text, widget: markdown }
-              - label: Sub Fields
-                name: sub_fields
+              - label: 'Images'
+                name: images
                 widget: list
                 fields:
-                  - { label: Label, name: label, widget: string }
-                  - { label: Value, name: value, widget: string }
-          - label: 'Post List'
-            name: 'post-list'
-            widget: object
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Text, name: text, widget: markdown }
-              - label: Blog Posts
-                name: blog_posts
-                widget: list
-                fields:
-                  - { label: "Post", name: "post", widget: "relation", collection: "blog", searchFields: ["title"], valueField: "slug", displayFields: ["title"] }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: Image Description, name: alt, widget: string }
   - name: photography
     label: "Photography"
     folder: "content/photography"
