@@ -217,11 +217,40 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 };
 
-exports.createSchemaCustomization = ({ actions }) => {
+exports.sourceNodes = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
-    type AuthorJson implements Node {
-      sections: JSON
+    type CarouselImages implements Node {
+      single_image: String
+      alt: String
+    }
+
+    type BlockFooterList implements Node {
+      label: String
+      value: String
+    }
+    
+    type BlockList implements Node {
+      title: String
+      text: String
+      footer_list: [BlockFooterList]
+    }
+    
+    type TextBlock implements Node {
+      title: String
+      text: String
+    }
+    
+    type Carousel implements Node {
+      title: String
+      text: String
+      images: [CarouselImages]
+    }
+
+    type MarkdownRemarkFrontmatterSections implements Node {
+      text_block: TextBlock
+      images: [CarouselImages]
+      blocks: BlockList
     }
   `
   createTypes(typeDefs)

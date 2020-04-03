@@ -59,6 +59,37 @@ export default class PostTemplate extends React.Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
+
+  fragment Carousel on MarkdownRemarkFrontmatterSections {
+    type
+    title
+    text
+    images {
+      single_image
+      alt
+    }
+  }
+
+  fragment TextBlock on MarkdownRemarkFrontmatterSections {
+    type
+    title
+    text
+  }
+
+  fragment BlockList on MarkdownRemarkFrontmatterSections {
+    type
+    title
+    text
+    blocks {
+      title
+      text
+      footer_list {
+        label
+        value
+      }
+    }
+  }
+
   query PageBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
@@ -76,12 +107,9 @@ export const pageQuery = graphql`
           }
         }
         sections {
-          type
-          title
-          text
-          blog_posts {
-            post
-          }
+          ...TextBlock
+          ...Carousel
+          ...BlockList
         }
       }
       fields {

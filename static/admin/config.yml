@@ -42,7 +42,7 @@ collections:
         widget: 'list'
         types:
           - label: 'Text Block'
-            name: 'text-block'
+            name: 'text_block'
             widget: object
             fields:
               - { label: Title, name: title, widget: string }
@@ -59,6 +59,24 @@ collections:
                 fields:
                   - { label: "Image", name: "image", widget: "image", required: false }
                   - { label: Image Description, name: alt, widget: string }
+          - label: 'Block List'
+            name: 'block_list'
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: markdown }
+              - label: 'Blocks'
+                name: blocks
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: markdown }
+                  - label: 'Footer List'
+                    name: footer_list
+                    widget: list
+                    fields:
+                      - { label: Label, name: label, widget: string }
+                      - { label: Value, name: value, widget: string }
   - name: photography
     label: "Photography"
     folder: "content/photography"
