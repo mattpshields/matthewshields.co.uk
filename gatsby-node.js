@@ -45,6 +45,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const postPage = path.resolve("src/templates/post.jsx");
+  const pagePage = path.resolve("src/templates/page.jsx");
   const albumPage = path.resolve("src/templates/album.jsx");
   const listingPage = path.resolve("./src/templates/listing.jsx");
 
@@ -150,6 +151,46 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  var pageEdges = allPosts.filter(function(post) {
+    return post.node.frontmatter.post_type === 'page';
+  });
+
+  // Post page creating
+  pageEdges.forEach((edge, index) => {
+    console.log('creating a page');
+    // Generate a list of tags
+    if (edge.node.frontmatter.tags) {
+      edge.node.frontmatter.tags.forEach(tag => {
+        tagSet.add(tag);
+      });
+    }
+
+    // Generate a list of categories
+    if (edge.node.frontmatter.category) {
+      categorySet.add(edge.node.frontmatter.category);
+    }
+
+    // Create post pages
+    const nextID = index + 1 < pageEdges.length ? index + 1 : 0;
+    const prevID = index - 1 >= 0 ? index - 1 : pageEdges.length - 1;
+    const nextEdge = pageEdges[nextID];
+    const prevEdge = pageEdges[prevID];
+
+    console.log(edge.node.fields.slug);
+
+    createPage({
+      path: edge.node.fields.slug,
+      component: pagePage,
+      context: {
+        slug: edge.node.fields.slug,
+        nexttitle: nextEdge.node.frontmatter.title,
+        nextslug: nextEdge.node.fields.slug,
+        prevtitle: prevEdge.node.frontmatter.title,
+        prevslug: prevEdge.node.fields.slug
+      }
+    });
+  });
+
   var photographyEdges = allPosts.filter(function(post) {
     return post.node.frontmatter.post_type === 'photography';
   });
@@ -175,3 +216,42 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 };
+
+exports.sourceNodes = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type CarouselImages implements Node {
+      single_image: String
+      alt: String
+    }
+
+    type BlockFooterList implements Node {
+      label: String
+      value: String
+    }
+    
+    type BlockList implements Node {
+      title: String
+      text: String
+      footer_list: [BlockFooterList]
+    }
+    
+    type TextBlock implements Node {
+      title: String
+      text: String
+    }
+    
+    type Carousel implements Node {
+      title: String
+      text: String
+      images: [CarouselImages]
+    }
+
+    type MarkdownRemarkFrontmatterSections implements Node {
+      text_block: TextBlock
+      images: [CarouselImages]
+      blocks: BlockList
+    }
+  `
+  createTypes(typeDefs)
+}
