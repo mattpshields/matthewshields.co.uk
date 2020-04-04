@@ -220,6 +220,7 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.sourceNodes = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
+
     type CarouselImages implements Node {
       single_image: String
       alt: String
@@ -230,28 +231,24 @@ exports.sourceNodes = ({ actions }) => {
       value: String
     }
     
-    type BlockList implements Node {
+    type BlockList {
       title: String
       text: String
       footer_list: [BlockFooterList]
     }
-    
-    type TextBlock implements Node {
-      title: String
-      text: String
-    }
-    
-    type Carousel implements Node {
-      title: String
-      text: String
-      images: [CarouselImages]
-    }
 
-    type MarkdownRemarkFrontmatterSections implements Node {
-      text_block: TextBlock
+    type Sections implements Node {
+      type: String
+      title: String
+      text: String
       images: [CarouselImages]
       blocks: BlockList
     }
+
+    type MarkdownRemarkFrontmatter implements Node {
+      sections: [Sections]
+    }
+
   `
   createTypes(typeDefs)
 }

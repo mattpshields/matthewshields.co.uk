@@ -60,7 +60,7 @@ export default class PostTemplate extends React.Component {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
 
-  fragment Carousel on MarkdownRemarkFrontmatterSections {
+  fragment Carousel on Sections {
     type
     title
     text
@@ -70,13 +70,13 @@ export const pageQuery = graphql`
     }
   }
 
-  fragment TextBlock on MarkdownRemarkFrontmatterSections {
+  fragment TextBlock on Sections {
     type
     title
     text
   }
 
-  fragment BlockList on MarkdownRemarkFrontmatterSections {
+  fragment BlockList on Sections {
     type
     title
     text

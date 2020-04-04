@@ -5,7 +5,7 @@ class FlexibleContent extends React.Component {
 
   choose_section(section) {
     switch(section.type) {
-      case 'text-block':
+      case 'text_block':
         return (
           <TextBlock title={section.title} text={section.text} />
         )
