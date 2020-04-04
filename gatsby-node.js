@@ -5,6 +5,8 @@ const _ = require("lodash");
 const moment = require("moment");
 const siteConfig = require("./data/SiteConfig");
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+const remark = require(`remark`)
+const html = require(`remark-html`)
 
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -218,6 +220,38 @@ exports.createPages = async ({ graphql, actions }) => {
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
+  actions.createFieldExtension({
+    name: "md",
+    args: {
+      sanitize: {
+        type: "Boolean!",
+        defaultValue: true,
+      },
+    },
+    // The extension `args` (above) are passed to `extend` as
+    // the first argument (`options` below)
+    extend(options, prevFieldConfig) {
+      return {
+        args: {
+          sanitize: "Boolean",
+        },
+        resolve(source, args, context, info) {
+          const fieldValue = context.defaultFieldResolver(
+            source,
+            args,
+            context,
+            info
+          )
+          const shouldSanitize =
+            args.sanitize != null ? args.sanitize : options.sanitize
+          const processor = remark().use(html, { sanitize: shouldSanitize })
+          return processor.processSync(fieldValue).contents
+        },
+      }
+    },
+  })
+
+
   const { createTypes } = actions
   const typeDefs = `
 
