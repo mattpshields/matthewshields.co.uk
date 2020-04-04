@@ -267,14 +267,14 @@ exports.createSchemaCustomization = ({ actions }) => {
     
     type BlockList {
       title: String
-      text: String
+      text: String @md
       footer_list: [BlockFooterList]
     }
 
     type Sections implements Node {
       type: String
       title: String
-      text: String
+      text: String @md
       images: [CarouselImages]
       blocks: [BlockList]
     }

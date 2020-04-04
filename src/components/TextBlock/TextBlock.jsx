@@ -7,7 +7,7 @@ class TextBlock extends React.Component {
     return (
       <div className="content-section">
         <h2>{this.props.title}</h2>
-        {format_paras(this.props.text)}
+        <div dangerouslySetInnerHTML={{__html: this.props.text}} />
       </div>
     );
   }
