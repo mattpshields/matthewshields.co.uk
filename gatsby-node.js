@@ -217,16 +217,16 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 };
 
-exports.sourceNodes = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
 
-    type CarouselImages implements Node {
-      single_image: String
+    type CarouselImages {
+      single_image: File
       alt: String
     }
 
-    type BlockFooterList implements Node {
+    type BlockFooterList {
       label: String
       value: String
     }
@@ -242,11 +242,15 @@ exports.sourceNodes = ({ actions }) => {
       title: String
       text: String
       images: [CarouselImages]
-      blocks: BlockList
+      blocks: [BlockList]
     }
 
-    type MarkdownRemarkFrontmatter implements Node {
+    type Frontmatter {
       sections: [Sections]
+    }
+
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
     }
 
   `

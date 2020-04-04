@@ -65,7 +65,13 @@ export const pageQuery = graphql`
     title
     text
     images {
-      single_image
+      single_image {
+        childImageSharp {
+          fluid(maxHeight: 700, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
       alt
     }
   }
