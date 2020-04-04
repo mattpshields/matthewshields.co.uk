@@ -225,11 +225,9 @@ exports.createSchemaCustomization = ({ actions }) => {
     args: {
       sanitize: {
         type: "Boolean!",
-        defaultValue: true,
+        defaultValue: false,
       },
     },
-    // The extension `args` (above) are passed to `extend` as
-    // the first argument (`options` below)
     extend(options, prevFieldConfig) {
       return {
         args: {
