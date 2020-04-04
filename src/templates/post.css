@@ -11,7 +11,7 @@ blockquote {
   border-left: 5px #ccc solid;
 }
 
-.post-content h2,
-.post-content h3 {
+h2,
+h3 {
   margin-top: 2em;
 }

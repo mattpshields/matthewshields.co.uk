@@ -21,7 +21,7 @@ export function createMarkup(text) {
 }
 
 export function format_paras(text) {
-  let newText = text.split ('\n').map ((item, i) => (item) ? <p key={i}>{item}</p> : '');
+  let newText = text.split ('\n').map ((item, i) => (item) ? <p key={i} dangerouslySetInnerHTML={{__html: item}} /> : '');
   return newText;
 }
 
