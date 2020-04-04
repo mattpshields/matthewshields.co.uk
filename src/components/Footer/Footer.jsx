@@ -10,9 +10,6 @@ class Footer extends Component {
     return (
       <footer aria-label="Main footer" className="footer">
         <UserLinks config={config} labeled />
-        <p>
-          <img src="https://api.netlify.com/api/v1/badges/c023a493-a603-4019-9652-8d104b5d36b2/deploy-status" alt="Netlify Build Status"/>
-        </p>
       </footer>
     );
   }
