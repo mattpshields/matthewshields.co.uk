@@ -112,8 +112,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: pageNum === 0 ? `/writing/` : `/writing/${pageNum + 1}/`,
       component: listingPage,
       context: {
-        limit: 10,
-        skip: pageNum * 10,
+        limit: postsPerPage,
+        skip: pageNum * postsPerPage,
         pageCount,
         currentPageNum: pageNum + 1
       }
