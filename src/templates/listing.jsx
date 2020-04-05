@@ -83,7 +83,9 @@ class Listing extends React.Component {
             <div className="posts-container">
               <PostListing postEdges={postEdges} linkPage={true} displayReadingTime={true} />
             </div>
-            {this.renderPaging()}
+            {this.props.pageContext.pageCount > 1 &&
+              this.renderPaging()
+            }
           </div>
         </div>
       </Layout>
