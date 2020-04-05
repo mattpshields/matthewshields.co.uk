@@ -23,4 +23,16 @@ The Netlify CMS documentation gives you a great breakdown of <a href="<https://w
 
 ## Editorial Workflow
 
-I don't use this feature while in the initial build phase as it slows me down, but as soon as I'm dealing with a live site I love this feature.
+I don't use this feature while in the initial build phase as it slows me down, but as soon as I'm dealing with a live site I love this feature. What this does is that it will create an individual branch so each piece of content that you write and allow you to save as a draft. You can enable this feature by adding this line into your config.yml file:
+
+```yaml
+publish_mode: editorial_workflow
+```
+
+Once you have done that you will see some more options appear in your site admin. When viewing your posts you will actually only see the ones that have been fully published, to see your in progress content you will need to go to Workflow. You now get 3 different states before you can actually publish.
+
+![A screenshot of Netlify CMS's editorial workflow screen](editorial-workflow.png "A screenshot of Netlify CMS's editorial workflow screen")
+
+If you happen to be using Netlify for your hosting (which I would very much recommend) and are on the free tier, just be aware that you may want to check the settings that you have for when it comes to deploy previews, a fantastic feature but depending on the scale of updates that you are making you might not want to use up all those build minutes!
+
+What I have done for this is I have
