@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import Headroom from "react-headroom";
-import UserLinks from "../UserLinks/UserLinks";
 import YAMLData from "../../../data/settings/navigation.yml"
 import "./Header.css";
 import yourSVG from '../../../static/theme_images/matthew-shields.svg'
