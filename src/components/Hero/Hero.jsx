@@ -12,17 +12,14 @@ import "../../styles/post-meta.css";
 class Hero extends React.Component {
   render() {
     let hero_class = "hero hero--noimg";
-
-    if (this.props.cover) {
-      hero_class = "hero";
-    }
-
     let image_fluid = false;
 
-    if (this.props.cover && this.props.cover.length === 1) {
-      image_fluid = this.props.cover.childImageSharp.fluid;
-    } else if (this.props.cover && this.props.cover.length > 1) {
+    if (Array.isArray(this.props.cover) && this.props.cover.length > 0) {
       image_fluid = this.props.cover[0].photo.childImageSharp.fluid;
+      hero_class = "hero";
+    } else if (this.props.cover) {
+      image_fluid = this.props.cover.childImageSharp.fluid;
+      hero_class = "hero";
     } else {
       image_fluid = false;
     }
