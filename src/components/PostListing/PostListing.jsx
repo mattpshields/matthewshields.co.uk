@@ -3,6 +3,8 @@ import { Link } from "gatsby";
 
 
 import { format_date } from "../../_helpers/helpers.js";
+import "../../styles/shadow-block.css";
+import "../../styles/post-meta.css";
 
 class PostListing extends React.Component {
   getPostList() {
@@ -29,18 +31,18 @@ class PostListing extends React.Component {
       <div>
         {/* Your post list here. */
         postList.map(post => (
-          <div className="project-list__single" key={post.title}>
+          <div className="shadow-block" key={post.title}>
             {linkPage ? ( 
-              <h3 className="project-list__title">
+              <h3 className="shadow-block__title">
                 <Link className="no-icon" to={post.path}>{post.title}</Link>
               </h3>
             ) : (
-              <h3 className="project-list__title">
+              <h3 className="shadow-block__title">
                 <a href={post.url} target="_blank">{post.title}</a>
               </h3>
             )}
             <p>{post.short_description}</p>
-            <footer aria-label="Post date" className="project-list__footer">
+            <footer aria-label="Post date" className="post-meta">
               <p>{post.date}</p>
               {this.props.displayReadingTime === true &&
                 <p>(Reading time: {post.timeToRead} minutes)</p>

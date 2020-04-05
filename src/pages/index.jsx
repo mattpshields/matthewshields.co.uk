@@ -9,6 +9,8 @@ import PostListing from "../components/PostListing/PostListing";
 
 import { createMarkup, format_date } from "../_helpers/helpers.js";
 
+import "../styles/pagination.css";
+
 class Home extends Component {
   render() {
     const { data } = this.props;
@@ -37,6 +39,9 @@ class Home extends Component {
             <p>As part of trying to get better at writing there's only one way and that's practice...</p>
                           
             <PostListing postEdges={data.allMarkdownRemark.edges} linkPage={true} displayReadingTime={true} />
+            <div className="paging-container paging-container--central">
+              <Link to="/writing/" className="paging-button">See more of my writing</Link>
+            </div>
             
           </div>
         </div>
