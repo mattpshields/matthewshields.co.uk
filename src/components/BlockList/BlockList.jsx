@@ -8,8 +8,8 @@ class BlockList extends React.Component {
         <div dangerouslySetInnerHTML={{__html: this.props.text}} />
 
         {this.props.blocks.map(block => (
-          <div key={block.title} className="project-list__single">
-            <h3 className="project-list__title">{block.title}</h3>
+          <div key={block.title} className="shadow-block">
+            <h3 className="shadow-block__title">{block.title}</h3>
             <div dangerouslySetInnerHTML={{__html: block.text}} />
 
             {block.footer_list && block.footer_list.length > 0 ? (

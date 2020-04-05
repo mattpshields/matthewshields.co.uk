@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 
 
 import { format_date } from "../../_helpers/helpers.js";
+import "../../styles/shadow-block.css";
 
 class PostListing extends React.Component {
   getPostList() {
@@ -29,13 +30,13 @@ class PostListing extends React.Component {
       <div>
         {/* Your post list here. */
         postList.map(post => (
-          <div className="project-list__single" key={post.title}>
+          <div className="shadow-block" key={post.title}>
             {linkPage ? ( 
-              <h3 className="project-list__title">
+              <h3 className="shadow-block__title">
                 <Link className="no-icon" to={post.path}>{post.title}</Link>
               </h3>
             ) : (
-              <h3 className="project-list__title">
+              <h3 className="shadow-block__title">
                 <a href={post.url} target="_blank">{post.title}</a>
               </h3>
             )}
