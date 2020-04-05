@@ -4,33 +4,57 @@ import Helmet from "react-helmet";
 import Layout from "../layout";
 import { Link } from "gatsby";
 import PostListing from "../components/PostListing/PostListing";
-import "./listing.css";
+import "../styles/pagination.css";
 
 import { createMarkup } from "../_helpers/helpers.js";
 
 class Listing extends React.Component {
+
+  pagingLink(pageNum, currentPage) {
+    switch(pageNum === currentPage) {
+      case true:
+        return (
+          <span>{currentPage}</span>
+        )
+        break;
+      default:
+        return (
+          <Link
+            key={`listing-page-${pageNum}`}
+            to={pageNum === 1 ? "/writing/" : `/writing/${pageNum}/`}
+          >
+            {pageNum}
+          </Link>
+        )
+    }
+  }
+
   renderPaging() {
     const { currentPageNum, pageCount } = this.props.pageContext;
     const prevPage = currentPageNum - 1 === 1 ? "/writing/" : `/writing/${currentPageNum - 1}/`;
     const nextPage = `/writing/${currentPageNum + 1}/`;
     const isFirstPage = currentPageNum === 1;
     const isLastPage = currentPageNum === pageCount;
+    console.log(pageCount);
 
     return (
       <div className="paging-container">
-        {!isFirstPage && <Link to={prevPage}>Previous</Link>}
-        {[...Array(pageCount)].map((_val, index) => {
-          const pageNum = index + 1;
-          return (
-            <Link
-              key={`listing-page-${pageNum}`}
-              to={pageNum === 1 ? "/writing/" : `/writing/${pageNum}/`}
-            >
-              {pageNum}
-            </Link>
-          );
-        })}
-        {!isLastPage && <Link to={nextPage}>Next</Link>}
+        <div className="paging-controls">
+          {!isFirstPage && <Link to={prevPage} className="paging-button">Previous</Link>}
+        </div>
+
+        <div className="paging-links">
+          {[...Array(pageCount)].map((_val, index) => {
+            const pageNum = index + 1;
+            return (
+              this.pagingLink(pageNum, currentPageNum)
+            );
+          })}
+        </div>
+
+        <div className="paging-controls">
+          {!isLastPage && <Link to={nextPage} className="paging-button">Next</Link>}
+        </div>
       </div>
     );
   }
@@ -59,7 +83,7 @@ class Listing extends React.Component {
             <div className="posts-container">
               <PostListing postEdges={postEdges} linkPage={true} displayReadingTime={true} />
             </div>
-            {/* {this.renderPaging()} */}
+            {this.renderPaging()}
           </div>
         </div>
       </Layout>
