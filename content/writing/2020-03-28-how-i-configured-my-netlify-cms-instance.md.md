@@ -24,7 +24,7 @@ I don't use this feature while in the initial build phase as it slows me down, b
 publish_mode: editorial_workflow
 ```
 
-Once you have done that you will see some more options appear in your site admin. When viewing your posts you will actually only see the ones that have been fully published, to see your in progress content you will need to go to Workflow. You now get 3 different states before you can actually publish - 'Drafts', 'In Review' and 'Ready'.
+Once you have done that you will see some more options appear in your site admin. When viewing your posts you will actually only see the ones that have been fully published, to see your in progress content you will need to go to Workflow. You now get 3 different states before you can actually publish - 'Drafts', 'In Review' and 'Ready'. Once you have marked a post as being 'Ready' you will then be able to publish it, where it will be merged back into the main branch.
 
 ![A screenshot of Netlify CMS's editorial workflow screen](editorial-workflow-example.png "A screenshot of Netlify CMS's editorial workflow screen")
 
