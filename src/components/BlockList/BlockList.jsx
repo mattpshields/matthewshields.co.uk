@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./BlockList.css";
+
 class BlockList extends React.Component {
   render() {
     return (

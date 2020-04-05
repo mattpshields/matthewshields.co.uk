@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 
 import { format_date } from "../../_helpers/helpers.js";
 import "../../styles/shadow-block.css";
+import "../../styles/post-meta.css";
 
 class PostListing extends React.Component {
   getPostList() {
@@ -41,7 +42,7 @@ class PostListing extends React.Component {
               </h3>
             )}
             <p>{post.short_description}</p>
-            <footer aria-label="Post date" className="project-list__footer">
+            <footer aria-label="Post date" className="post-meta">
               <p>{post.date}</p>
               {this.props.displayReadingTime === true &&
                 <p>(Reading time: {post.timeToRead} minutes)</p>

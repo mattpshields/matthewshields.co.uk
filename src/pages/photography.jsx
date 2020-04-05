@@ -5,8 +5,7 @@ import Img from "gatsby-image";
 import Layout from "../layout";
 import { Link } from "gatsby";
 import "./photography.css";
-
-import { createMarkup, wrapWords, format_paras } from "../_helpers/helpers.js";
+import Hero from "../components/Hero/Hero";
 
 class Home extends Component {
   render() {
@@ -16,14 +15,7 @@ class Home extends Component {
       <Layout>
         <div>
           <Helmet title={`Photography | Matthew Shields | Leeds based Web Developer`} />
-          <div className="hero hero--noimg">
-            <div className="hero__inner">
-              <h1 className="hero__title" dangerouslySetInnerHTML={createMarkup('Photography')} />
-              <div className="hero__description">
-                <p>Hobbies are important. I know I'm a developer but I am really enjoying practicing my photography skills as a creative outlet outside of coding. Hope you enjoy!</p>
-              </div>
-            </div>
-          </div>
+          <Hero title="Photography" description="Hobbies are important. I know I'm a developer but I am really enjoying practicing my photography skills as a creative outlet outside of coding. Hope you enjoy!" />
           {data.allMarkdownRemark.edges.length > 0 ? (
             <div>
               {data.allMarkdownRemark.edges.map(post => (
@@ -38,11 +30,7 @@ class Home extends Component {
                         </div>
                       ))}
                     </div>
-                  ) : (
-                    <ul>
-                      <li><em>Clearly I haven't been practicing enough</em></li>
-                    </ul>
-                  )}
+                  ) : false}
                   <div className="gallery-block__inner">
                     <h2>{post.node.frontmatter.title}</h2>
                     <div dangerouslySetInnerHTML={{ __html: post.node.html }} />

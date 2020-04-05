@@ -4,8 +4,7 @@ import Helmet from "react-helmet";
 import Layout from "../layout";
 import { Link } from "gatsby";
 import PostListing from "../components/PostListing/PostListing";
-import "./listing.css";
-import "../styles/post-meta.css";
+import "../styles/pagination.css";
 
 import { createMarkup } from "../_helpers/helpers.js";
 
