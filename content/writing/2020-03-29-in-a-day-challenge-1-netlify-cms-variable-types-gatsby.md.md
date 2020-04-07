@@ -94,7 +94,7 @@ You do this through the gatsby-node.js file, you will need to run the function a
 Given my example config.yml from above and the resulting <a href="<https://raw.githubusercontent.com/MatthewShields/gatsby-netlify-cms-variable-types/master/content/pages/2020-04-06-test-variable-types-page.md.md>" target="_blank">markdown file</a> I have structured my type definitions like so:
 
 * **MarkdownRemarkFrontmatter** - I tell it to expect an array of the fields as defined in *Sections*
-* **Sections** - I tell this to expect the fields that I have used in my config.yml
+* **Sections** - I tell this to expect the fields that I have used in my config.yml - note that you are defining the actual fields, I recommend referring to your created markdown file when doing this
 * **List Widget fields** - When a List widget has been used I define these fields in their or type definition where they can then be included within the square brackets to tell Gatsby to expect an array
 
 ```javascript
@@ -103,7 +103,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     const typeDefs = `
   
       type CarouselImages {
-        image: File @fileByRelativePath
+        image: File
         alt: String
       }
       
