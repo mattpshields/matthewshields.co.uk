@@ -201,6 +201,90 @@ export const pageQuery = graphql`
 `;
 ```
 
-When this is returned I have an array of objects, one for each of the types that page had in the CMS, with only its relevant fields as part of that object. I will now be able use that array to loop through and
+When this query is returned I have an array of objects, one for each entry of a variable type, as you can see in this screenshot. Perfect as we now have a flexible query that will handle as many instances as needed, in any order, or without all types being present. Just what I needed!
+
+![A screenshot of the array returned by the GraphQL query](variable-type-array-no-formatting.png "A screenshot of the array returned by the GraphQL query")
+
+## Its all Markdown-hill from there
+
+The eagle eyed of you might notice the lack of HTML formatting with the text field though, in fact at this point is returning the raw markdown content, this is less than ideal but luckily can be resolved, using... Field Resolvers (ba dum tsh). What we will first need to do is install the package <a href="<https://www.npmjs.com/package/remark-html>" target="_blank">remark-html</a>:
+
+```bash
+npm install remark-html
+```
+
+Then we will need to include a couple of modules that we will need to help us convert the markdown into the HTML we want:
+
+```javascript
+const remark = require(`remark`)
+const html = require(`remark-html`)
+```
+
+Then we need to return back to our *createSchemaCustomization* function in our gatsby-node.js file from earlier. Using the example from Gatsby's documentation you can see how to add a new field extension that will take the input of the field content, convert from markdown and then return the final HTML. Once your field resolver is created you can then indicate which fields to use if on by indicating with @md in the create types setup.
+
+```javascript
+
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createFieldExtension({
+    name: "md",
+    args: {
+      sanitize: {
+        type: "Boolean!",
+        defaultValue: false,
+      },
+    },
+    extend(options, prevFieldConfig) {
+      return {
+        args: {
+          sanitize: "Boolean",
+        },
+        resolve(source, args, context, info) {
+          const fieldValue = context.defaultFieldResolver(
+            source,
+            args,
+            context,
+            info
+          )
+          const shouldSanitize =
+            args.sanitize != null ? args.sanitize : options.sanitize
+          const processor = remark().use(html, { sanitize: shouldSanitize })
+          return processor.processSync(fieldValue).contents
+        },
+      }
+    },
+  })
+
+  const { createTypes } = actions
+  const typeDefs = `
+
+    type CarouselImages {
+      image: File @fileByRelativePath
+      alt: String
+    }
+    
+    type BlockList {
+      title: String
+      text: String @md
+    }
+  
+    type Sections {
+      type: String
+      title: String
+      text: String @md
+      images: [CarouselImages]
+      blocks: [BlockList]
+    }
+
+    type MarkdownRemarkFrontmatter {
+      sections: [Sections]
+      cover: File @fileByRelativePath
+    }
+
+  `
+  createTypes(typeDefs)
+}
+```
+
+I'm definitely interested in finding out more about field resolvers as they seem like they could be really powerful and helpful in the future. For this particular issue though as you can see in this screenshot be are now getting our fully formatted HTML returning and ready to be used. 
 
 ![A screenshot of the array returned by the GraphQL query](variable-type-array.png "A screenshot of the array returned by the GraphQL query")
