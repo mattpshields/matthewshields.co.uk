@@ -130,6 +130,77 @@ exports.createSchemaCustomization = ({ actions }) => {
   }
 ```
 
+## Building your GraphQL query
 
+Now that we have our type definitions in place we can actually build the query for the page. I preferred building this using fragments, this made it a lot easier for me to organise these in my mind, ensuring that I have the fields that I wanted for each variable type. Don't worry about if you have duplicate fields in each fragment, such as *title* or *text*, these will be compiled into a single query.
+
+```javascript
+export const pageQuery = graphql`
+
+  fragment Carousel on Sections {
+    type
+    title
+    text
+    images {
+      image {
+        childImageSharp {
+          fluid(maxHeight: 700, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      alt
+    }
+  }
+
+  fragment TextBlock on Sections {
+    type
+    title
+    text
+  }
+
+  fragment BlockList on Sections {
+    type
+    title
+    text
+    blocks {
+      title
+      text
+    }
+  }
+
+  query PageBySlug($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      timeToRead
+      excerpt
+      frontmatter {
+        title
+        short_description
+        date
+        cover {
+          childImageSharp {
+            fluid(maxHeight: 700, quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        sections {
+          ...TextBlock
+          ...Carousel
+          ...BlockList
+        }
+      }
+      fields {
+        slug
+        date
+      }
+    }
+  }
+  
+`;
+```
 
 When this is returned I have an array of objects, one for each of the types that page had in the CMS, with only its relevant fields as part of that object. I will now be able use that array to loop through and
+
+![A screenshot of the array returned by the GraphQL query](variable-type-array.png "A screenshot of the array returned by the GraphQL query")
