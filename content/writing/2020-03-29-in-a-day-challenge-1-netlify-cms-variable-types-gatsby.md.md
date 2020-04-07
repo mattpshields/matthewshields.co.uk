@@ -91,6 +91,12 @@ What you can do to get around this issue properly is use Gatsby's <a href="<http
 
 You do this through the gatsby-node.js file, you will need to run the function and define each of your fields, taking care to make sure that you note which of your fields are repeatable (i.e. List widgets) as you will need to define these as expecting to be arrays. Heads up here to remember that you are working in your gatsby-node.js file, there isn't the hot-reloading like most of the project so don't forget that you will need to restart when you make changes.
 
+Given my example config.yml from above and the resulting <a href="<https://raw.githubusercontent.com/MatthewShields/gatsby-netlify-cms-variable-types/master/content/pages/2020-04-06-test-variable-types-page.md.md>" target="_blank">markdown file</a> I have structured my type definitions like so:
+
+* **MarkdownRemarkFrontmatter** - I tell it to expect an array of the fields as defined in *Sections*
+* **Sections** - I tell this to expect the fields that I have used in my config.yml
+* **List Widget fields** - When a List widget has been used I define these fields in their or type definition where they can then be included within the square brackets to tell Gatsby to expect an array
+
 ```javascript
 exports.createSchemaCustomization = ({ actions }) => {
     const { createTypes } = actions
@@ -100,37 +106,30 @@ exports.createSchemaCustomization = ({ actions }) => {
         image: File @fileByRelativePath
         alt: String
       }
-  
-      type BlockFooterList {
-        label: String
-        value: String
-      }
       
       type BlockList {
         title: String
-        text: String @md
+        text: String
       }
   
-      type Sections implements Node {
+      type Sections {
         type: String
         title: String
-        text: String @md
+        text: String
         images: [CarouselImages]
         blocks: [BlockList]
       }
   
-      type Frontmatter {
+      type MarkdownRemarkFrontmatter {
         sections: [Sections]
         cover: File @fileByRelativePath
-      }
-  
-      type MarkdownRemark implements Node {
-        frontmatter: Frontmatter
       }
   
     `
     createTypes(typeDefs)
   }
 ```
+
+
 
 When this is returned I have an array of objects, one for each of the types that page had in the CMS, with only its relevant fields as part of that object. I will now be able use that array to loop through and
