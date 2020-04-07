@@ -285,6 +285,6 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 ```
 
-I'm definitely interested in finding out more about field resolvers as they seem like they could be really powerful and helpful in the future. For this particular issue though as you can see in this screenshot be are now getting our fully formatted HTML returning and ready to be used. 
+I'm definitely interested in finding out more about field resolvers as they seem like they could be really powerful and helpful in the future. For this particular issue though as you can see in this screenshot be are now getting our fully formatted HTML returning and ready to be used. What you will notice is that each item in the array will have all possible fields 
 
 ![A screenshot of the array returned by the GraphQL query](variable-type-array.png "A screenshot of the array returned by the GraphQL query")
