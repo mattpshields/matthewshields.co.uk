@@ -223,7 +223,6 @@ const html = require(`remark-html`)
 Then we need to return back to our *createSchemaCustomization* function in our gatsby-node.js file from earlier. Using the example from Gatsby's documentation you can see how to add a new field extension that will take the input of the field content, convert from markdown and then return the final HTML. Once your field resolver is created you can then indicate which fields to use if on by indicating with @md in the create types setup.
 
 ```javascript
-
 exports.createSchemaCustomization = ({ actions }) => {
   actions.createFieldExtension({
     name: "md",
@@ -285,6 +284,86 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 ```
 
-I'm definitely interested in finding out more about field resolvers as they seem like they could be really powerful and helpful in the future. For this particular issue though as you can see in this screenshot be are now getting our fully formatted HTML returning and ready to be used. What you will notice is that each item in the array will have all possible fields 
+I'm definitely interested in finding out more about field resolvers as they seem like they could be really powerful and helpful in the future. For this particular issue though as you can see in this screenshot be are now getting our fully formatted HTML returning and ready to be used. What you will notice is that each item in the array will have all the possible fields included in it, i.e. *text_block* will also have *images* as part of it, however will be *null* so we can work with that.
 
 ![A screenshot of the array returned by the GraphQL query](variable-type-array.png "A screenshot of the array returned by the GraphQL query")
+
+## Flexible Content in React
+
+Now we have a working GraphQL query we actually want to use it in React. To do this we will need a component that we can pass *sections* into, this will then need to figure out what component type we are wanting to use and then pass the individual fields into it to display on the front end.
+
+To do this I created a new component of FlexibleContent which takes the sections input, loops through it and then uses a switch function to determine which component we want to use. Then passing the fields that each component requires also means that it doesn't matter about the *null* unnecessary fields as the component won't be doing anything with them. 
+
+By passing the fields individually rather than passing the entire object also means that the components will be easier for us to use outside of the content of the FlexibleContent loop as well ensuring consistency across your site.
+
+### FlexibleContent Component
+
+```javascript
+import React from "react";
+import TextBlock from "../TextBlock/TextBlock";
+import BlockList from "../BlockList/BlockList";
+import Carousel from "../Carousel/Carousel";
+
+class FlexibleContent extends React.Component {
+
+  choose_section(section) {
+    switch(section.type) {
+      case 'text_block':
+        return (
+          <TextBlock title={section.title} text={section.text} />
+        )
+        break;
+      case 'block_list':
+        return (
+          <BlockList title={section.title} text={section.text} blocks={section.blocks} />
+        )
+        break;
+      case 'carousel':
+        return (
+          <Carousel title={section.title} text={section.text} images={section.images} />
+        )
+        break;
+      default:
+        // code block
+    }
+  }
+
+  render() {
+    let sections = this.props.sections;
+    return (
+      <div>
+        {sections.map((section, index) => (
+          <div className="content-block" key={section.type+'_'+index}>
+            {this.choose_section(section)}
+          </div>
+        ))}
+      </div>
+    );
+  }
+}
+
+export default FlexibleContent;
+
+```
+
+### Using the FlexibleContent Component
+
+```javascript
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../layout";
+import FlexibleContent from "../components/FlexibleContent/FlexibleContent";
+
+export default class PostTemplate extends React.Component {
+  render() {
+    const { data, pageContext } = this.props;
+    const postNode = data.markdownRemark;
+
+    return (
+      <Layout>
+        <FlexibleContent sections={postNode.frontmatter.sections} />
+      </Layout>
+    );
+  }
+}
+```
