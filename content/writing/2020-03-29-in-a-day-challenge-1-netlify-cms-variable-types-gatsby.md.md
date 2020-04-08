@@ -9,7 +9,7 @@ short_description: >-
 date: 2020-03-29T18:12:27.948Z
 slug: netlify-cms-variable-types-gatsby
 ---
-> I have created a <a href="<https://github.com/MatthewShields/gatsby-netlify-cms-variable-types>" target="_blank">simplified repository</a> based off of the <a href="<https://www.gatsbyjs.org/starters/vagr9k/gatsby-advanced-starter/>" target="_blank">gatsby-advanced-starter</a> with a working example of this which might be helpful to refer to.
+> I have created a <a href="https://github.com/MatthewShields/gatsby-netlify-cms-variable-types" target="_blank">simplified repository</a> based off of the <a href="https://www.gatsbyjs.org/starters/vagr9k/gatsby-advanced-starter/" target="_blank">gatsby-advanced-starter</a> with a working example of this which might be helpful to refer to.
 
 **This post will cover:**
 
@@ -31,7 +31,7 @@ When building version one of my site I knew I wanted pages to have different con
 
 After looking into the widget types built into Netlify CMS I couldn't find anything that quite catered for my needs. The closest was 'List' which gives you the ability to add a repeatable set of fields, but these fields are static and the same for each repetition. I could use 'List' and add every instance of field along with ability to pick which component to use, but as there isn't any conditional logic, this would become awful to use really fast.
 
-On the Netlify CMS site they have a list of their beta features and in there I found exactly what I was after - <a href="<https://www.netlifycms.org/docs/beta-features/#list-widget-variable-types>" target="_blank">, variable types</a>. This feature provides the ability to use a repeater like with 'List' but assign different fields to each type.
+On the Netlify CMS site they have a list of their beta features and in there I found exactly what I was after - <a href="https://www.netlifycms.org/docs/beta-features/#list-widget-variable-types" target="_blank">, variable types</a>. This feature provides the ability to use a repeater like with 'List' but assign different fields to each type.
 
 Variable types was straight-forward to set up once I knew that it existed. Unfortunately, that came after a couple of hours of trying to build my own version of the ACF flexible content functionality as a Netlify CMS custom widget. But that's given me ideas for another challenge so nothing wasted!
 
@@ -98,11 +98,11 @@ A solution to this could be to have a page that had an example of all components
 
 ## Using createSchemaCustomization API and createTypes to define field content type
 
-What you can do to get around this issue properly is use Gatsby's <a href="<https://www.gatsbyjs.org/docs/schema-customization/#creating-type-definitions>" target="_blank">*createSchemaCustomization API*</a> to manually define what content type Gatsby should expect from a given field, rather than it requiring it to exist to be inferred. Honestly, I found the Gatsby documentation a little confusing on this one and it took me a while to get it but once you have it up and running it makes sense. 
+What you can do to get around this issue properly is use Gatsby's <a href="https://www.gatsbyjs.org/docs/schema-customization/#creating-type-definitions" target="_blank">*createSchemaCustomization API*</a> to manually define what content type Gatsby should expect from a given field, rather than it requiring it to exist to be inferred. Honestly, I found the Gatsby documentation a little confusing on this one and it took me a while to get it but once you have it up and running it makes sense. 
 
 You can use this API in the gatsby-node.js file. You will need to make a call to the *createSchemaCustomization API* and define each of your fields (taking care to make sure that you note which of your fields are repeatable, i.e. List widgets), as you will need to define these as expecting to be arrays. Heads up here to remember that you are working in your gatsby-node.js file, there isn't the hot-reloading like most of the project so don't forget that you will need to restart when you make changes.
 
-Given my example config.yml from above and the resulting <a href="<https://raw.githubusercontent.com/MatthewShields/gatsby-netlify-cms-variable-types/master/content/pages/2020-04-06-test-variable-types-page.md.md>" target="_blank">markdown file</a> I have structured my type definitions like so:
+Given my example config.yml from above and the resulting <a href="https://raw.githubusercontent.com/MatthewShields/gatsby-netlify-cms-variable-types/master/content/pages/2020-04-06-test-variable-types-page.md.md" target="_blank">markdown file</a> I have structured my type definitions like so:
 
 * **MarkdownRemarkFrontmatter** - I tell it to expect an array of the fields as defined in *Sections.*
 * **Sections** - I tell this to expect the fields that I have used in my config.yml - note that you are defining the actual fields, I recommend referring to your created markdown file when doing this.
@@ -218,7 +218,7 @@ When this query is returned I have an array of objects, one for each entry of a 
 
 ## It's all Markdown-hill from there
 
-The eagle eyed of you might notice the lack of HTML formatting within the text field, at this point it's returning the raw markdown content, this is less than ideal but luckily can be resolved, using... Field Resolvers (ba dum tsh). What we will first need to do is install the package <a href="<https://www.npmjs.com/package/remark-html>" target="_blank">remark-html</a>:
+The eagle eyed of you might notice the lack of HTML formatting within the text field, at this point it's returning the raw markdown content, this is less than ideal but luckily can be resolved, using... Field Resolvers (ba dum tsh). What we will first need to do is install the package <a href="https://www.npmjs.com/package/remark-html" target="_blank">remark-html</a>:
 
 ```bash
 npm install remark-html
@@ -382,4 +382,4 @@ export default class PageTemplate extends React.Component {
 
 And there we have it, the ability to be able to flexibly build out pages using Netlify Variable Types and a single page template. This is actually powering most of the pages of my site and am looking at building out the component collection over time. I hope that this helps any of you struggling to pick up using Variable Types for the first time, I was really struggling to find any guides with how to use it with Gatsby specifically. I feel like this is my first big challenge overcome in taking this into being able to use with client projects.
 
-If there are any issues or improvements you can feel free to make a pull request to my demo repo or get in touch with me on <a href="<https://twitter.com/whatsthatweasel>" target="_blank">Twitter</a>, and I will update this post over time too.
+If there are any issues or improvements you can feel free to make a pull request to my demo repo or get in touch with me on <a href="https://twitter.com/whatsthatweasel" target="_blank">Twitter</a>, and I will update this post over time too.
