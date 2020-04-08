@@ -1,6 +1,6 @@
 ---
 post_type: post
-title: Netlify CMS Variable Types + Gatsby
+title: Netlify CMS Variable Types and Gatsby
 short_description: >-
   Missing the flexible content approach of my CMS past, I really wanted to bring
   this flexibility to my Netlify CMS site. In this post I break down how I
