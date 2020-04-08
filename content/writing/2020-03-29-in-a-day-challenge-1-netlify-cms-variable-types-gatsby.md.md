@@ -2,13 +2,24 @@
 post_type: post
 title: Netlify CMS Variable Types + Gatsby
 short_description: >-
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa nulla
-  veritatis beatae ullam quas repellendus praesentium corporis deserunt ab porro
-  alias debitis voluptatum, dignissimos adipisci, dolor laborum minus hic!
+  Missing the flexible content approach of my CMS past, I really wanted to bring
+  this flexibility to my Netlify CMS site. In this post I break down how I
+  approached using Netlify CMS's Variable Types to achieve this, and what you
+  would have to do to achieve the same thing.
 date: 2020-03-29T18:12:27.948Z
 slug: netlify-cms-variable-types-gatsby
 ---
 > I have created a <a href="<https://github.com/MatthewShields/gatsby-netlify-cms-variable-types>" target="_blank">simplified repository</a> based off of the <a href="<https://www.gatsbyjs.org/starters/vagr9k/gatsby-advanced-starter/>" target="_blank">gatsby-advanced-starter</a> with a working example of this which might be helpful to refer to.
+
+**This post will cover:**
+
+* Setting up Variable Types fields in Netlify CMS
+* Defining field types in Gatsby using createSchemaCustomization API
+* Querying Variable Type fields in GraphQL
+* Formatting markdown content with createFieldExtension
+* Displaying Variable Type queried data in React
+
+## My issue: The static nature of my Netlify CMS content
 
 I have historically worked with WordPress for my CMS sites and love the flexibility provided to me by using Advanced Custom Fields, more specifically with it's *'Flexible Content'* approach. This allows you to build pages using any combination of components as required, without resorting to using inefficient page builder plugins.
 
