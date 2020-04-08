@@ -13,11 +13,11 @@ slug: netlify-cms-variable-types-gatsby
 
 **This post will cover:**
 
-* Setting up Variable Types fields in Netlify CMS
-* Defining field types in Gatsby using createSchemaCustomization API
-* Querying Variable Type fields in GraphQL
-* Formatting markdown content with createFieldExtension
-* Displaying Variable Type queried data in React
+* [Setting up Variable Types fields in Netlify CMS](#introducing-netlify-cms-variable-types)
+* [Defining field types in Gatsby using createSchemaCustomization API](#using-createschemacustomization-api-and-createtypes-to-define-field-content-type)
+* [Querying Variable Type fields in GraphQL](#building-your-graphql-query)
+* [Formatting markdown content with createFieldExtension](#its-all-markdown-hill-from-there)
+* [Displaying Variable Type queried data in React](#flexible-content-in-react)
 
 ## My issue: The static nature of my Netlify CMS content
 
