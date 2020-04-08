@@ -31,7 +31,7 @@ When building version one of my site I knew I wanted pages to have different con
 
 After looking into the widget types built into Netlify CMS I couldn't find anything that quite catered for my needs. The closest was 'List' which gives you the ability to add a repeatable set of fields, but these fields are static and the same for each repetition. I could use 'List' and add every instance of field along with ability to pick which component to use, but as there isn't any conditional logic, this would become awful to use really fast.
 
-On the Netlify CMS site they have a list of their beta features and in there I found exactly what I was after <a href="https://www.netlifycms.org/docs/beta-features/#list-widget-variable-types" target="_blank">, variable types</a>. This feature provides the ability to use a repeater like with 'List' but assign different fields to each type.
+On the Netlify CMS site they have a list of their beta features and in there I found exactly what I was after, <a href="https://www.netlifycms.org/docs/beta-features/#list-widget-variable-types" target="_blank">variable types</a>. This feature provides the ability to use a repeater like with 'List' but assign different fields to each type.
 
 Variable types was straight-forward to set up once I knew that it existed. Unfortunately, that came after a couple of hours of trying to build my own version of the ACF flexible content functionality as a Netlify CMS custom widget. But that's given me ideas for another challenge so nothing wasted!
 
