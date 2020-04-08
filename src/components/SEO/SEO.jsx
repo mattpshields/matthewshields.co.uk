@@ -18,6 +18,8 @@ class SEO extends Component {
         : postNode.excerpt;
       if(postMeta.cover) {
         image = postMeta.cover.childImageSharp.fluid.src;
+      } else if(postMeta.social_image) {
+        image = postMeta.social_image.childImageSharp.fluid.src;
       } else {
         image = false;
       }
