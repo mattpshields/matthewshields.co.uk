@@ -269,7 +269,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       footer_list: [BlockFooterList]
     }
 
-    type Sections implements Node {
+    type Sections {
       type: String
       title: String
       text: String @md
@@ -277,12 +277,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       blocks: [BlockList]
     }
 
-    type Frontmatter {
+    type MarkdownRemarkFrontmatter implements Node {
       sections: [Sections]
-    }
-
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
     }
 
   `
