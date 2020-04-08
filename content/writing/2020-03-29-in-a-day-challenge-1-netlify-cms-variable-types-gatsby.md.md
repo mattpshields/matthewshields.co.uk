@@ -6,7 +6,7 @@ short_description: >-
   Netlify CMS site. In this post I break down how I approached this using
   Netlify CMS's Variable Types, and what you would have to do to achieve the
   same thing.
-date: 2020-03-29T18:12:27.948Z
+date: 2020-04-08T18:12:27.948Z
 social_image: netlify-cms-variable-types-gatsby.jpg
 slug: netlify-cms-variable-types-gatsby
 ---
