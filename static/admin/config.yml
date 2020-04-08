@@ -21,6 +21,7 @@ collections:
       - { label: "Short Description", name: "short_description", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Cover Image", name: "cover", widget: "image", required: false }
+      - { label: "Social Image", name: "social_image", widget: "image", required: false }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: pages
