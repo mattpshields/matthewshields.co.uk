@@ -7,6 +7,7 @@ short_description: >-
   Netlify CMS's Variable Types, and what you would have to do to achieve the
   same thing.
 date: 2020-03-29T18:12:27.948Z
+social_image: netlify-cms-variable-types-gatsby.jpg
 slug: netlify-cms-variable-types-gatsby
 ---
 > I have created a <a href="https://github.com/MatthewShields/demo-gatsby-netlify-variable-types" target="_blank">simplified repository</a> based off of the <a href="https://www.gatsbyjs.org/starters/vagr9k/gatsby-advanced-starter/" target="_blank">gatsby-advanced-starter</a> with a working example of this which might be helpful to refer to.
