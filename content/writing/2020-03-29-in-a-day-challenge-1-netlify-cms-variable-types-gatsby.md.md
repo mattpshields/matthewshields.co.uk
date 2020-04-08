@@ -9,7 +9,7 @@ short_description: >-
 date: 2020-03-29T18:12:27.948Z
 slug: netlify-cms-variable-types-gatsby
 ---
-> I have created a <a href="https://github.com/MatthewShields/gatsby-netlify-cms-variable-types" target="_blank">simplified repository</a> based off of the <a href="https://www.gatsbyjs.org/starters/vagr9k/gatsby-advanced-starter/" target="_blank">gatsby-advanced-starter</a> with a working example of this which might be helpful to refer to.
+> I have created a <a href="https://github.com/MatthewShields/demo-gatsby-netlify-variable-types" target="_blank">simplified repository</a> based off of the <a href="https://www.gatsbyjs.org/starters/vagr9k/gatsby-advanced-starter/" target="_blank">gatsby-advanced-starter</a> with a working example of this which might be helpful to refer to.
 
 **This post will cover:**
 
@@ -102,7 +102,7 @@ What you can do to get around this issue properly is use Gatsby's <a href="https
 
 You can use this API in the gatsby-node.js file. You will need to make a call to the *createSchemaCustomization API* and define each of your fields (taking care to make sure that you note which of your fields are repeatable, i.e. List widgets), as you will need to define these as expecting to be arrays. Heads up here to remember that you are working in your gatsby-node.js file, there isn't the hot-reloading like most of the project so don't forget that you will need to restart when you make changes.
 
-Given my example config.yml from above and the resulting <a href="https://raw.githubusercontent.com/MatthewShields/gatsby-netlify-cms-variable-types/master/content/pages/2020-04-06-test-variable-types-page.md.md" target="_blank">markdown file</a> I have structured my type definitions like so:
+Given my example config.yml from above and the resulting <a href="https://raw.githubusercontent.com/MatthewShields/demo-gatsby-netlify-variable-types/master/content/pages/2020-04-06-test-variable-types-page.md.md" target="_blank">markdown file</a> I have structured my type definitions like so:
 
 * **MarkdownRemarkFrontmatter** - I tell it to expect an array of the fields as defined in *Sections.*
 * **Sections** - I tell this to expect the fields that I have used in my config.yml - note that you are defining the actual fields, I recommend referring to your created markdown file when doing this.
