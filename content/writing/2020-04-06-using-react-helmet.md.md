@@ -15,10 +15,10 @@ The document head serves some very important uses:
 
 * Providing context as you move between different pages.
 * Search Engine Optimisation (SEO) through elements such as the title and meta description.
-* Avoiding Google duplicate content penalties with an appropriate canonical tag.
+* Avoiding Google duplicate content penalties with an appropriate <a href="https://moz.com/learn/seo/canonicalization" target="_blank">canonical tag</a>.
 * Controlling the images used when your page is shared on social media for maximum impact.
 * Providing additional information to services through schema data.
-* As well as so many more that I can't list them all - luckily <a href="<https://github.com/joshbuchea/HEAD>" target="_blank">Josh Buchea</a> has!
+* As well as so many more that I can't list them all - luckily <a href="https://github.com/joshbuchea/HEAD" target="_blank">Josh Buchea</a> has!
 
 A common issue with React sites in production sites is the lack of unique meta titles and descriptions, with generic text being applied throughout the site.
 
@@ -26,9 +26,9 @@ I work at an agency which specialises in SEO, so there's always been an importan
 
 ## The NFL to the rescue: react-helmet
 
-Although not into sports of any variety, consider me a fan for this React component from the development team at the NFL. <a href="<https://github.com/nfl/react-helmet>" target="_blank">'react-helmet'</a> provides a very accessible way to control any elements of the document head including title, base, meta, link, script, noscript, and style tags within any level of your React application.
+Although not into sports of any variety, consider me a fan for this React component from the development team at the NFL. <a href="https://github.com/nfl/react-helmet" target="_blank">'react-helmet'</a> provides a very accessible way to control any elements of the document head including title, base, meta, link, script, noscript, and style tags within any level of your React application.
 
-You can add these tags by first importing react-helmet and then passing as child elements the tags that you are wanting to appear in the document head. You can see in this example from their <a href="<https://github.com/nfl/react-helmet>" target="_blank">GitHub page</a>, how they are passing JSX markup as a child of the component for them to be added.
+You can add these tags by first importing react-helmet and then passing as child elements the tags that you are wanting to appear in the document head. You can see in this example from their <a href="https://github.com/nfl/react-helmet" target="_blank">GitHub page</a>, how they are passing JSX markup as a child of the component for them to be added.
 
 ```javascript
 import React from "react";
@@ -105,7 +105,7 @@ class SEO extends Component {
 export default SEO;
 ```
 
-*A simplified example from the SEO component included in <a href="<https://github.com/Vagr9K/gatsby-advanced-starter/blob/master/src/components/SEO/SEO.jsx>" target="_blank">gatsby-advanced-starter</a>.*
+*A simplified example from the SEO component included in <a href="https://github.com/Vagr9K/gatsby-advanced-starter/blob/master/src/components/SEO/SEO.jsx" target="_blank">gatsby-advanced-starter</a>.*
 
 This approach has worked really well for me as it means that I don't have to have the code in each of my templates and has ensured consistency across the site. But what if you need something custom on a page which your generic component doesn't cater for?
 
@@ -143,7 +143,7 @@ render() {
 
 ## Another Example: JSON Schema
 
-When wanting to add JSON schema to your site, of which there is a <a href="<https://schema.org/docs/full.html>" target="_blank">huge variety</a>, this can be done in a very similar way. If you prepare your data in a variable, you can JSON.stringify your finalised variable before passing it into the Helmet component within the script tag.
+When wanting to add JSON schema to your site, of which there is a <a href="https://schema.org/docs/full.html" target="_blank">huge variety</a>, this can be done in a very similar way. If you prepare your data in a variable, you can JSON.stringify your finalised variable before passing it into the Helmet component within the script tag.
 
 ```javascript
 export default function Template({ data }) {
@@ -184,23 +184,23 @@ export default function Template({ data }) {
 
 Now that you know *how* to manage your document head using react-helmet, *what* should you be adding into it? As previously stated there are a huge variety of tags that can be added, but my advice to you would be to ensure that at a **minimum** your site includes the following:
 
-* **Meta Title** - *e.g. Page Title | Site Name, aim to keep it under 60 characters.*
-* **Meta Description** - *a more expansive description of what the page content is about. Aim to keep within about 160 characters.*
-* **Canonical Tag** *\- set the definitive URL for the page to avoid duplicate content penalties, this can happen if your site is accessible from multiple URLs (with and without trailing slash, with query strings etc)*
-* **Favicon** *\- this makes it easier for users to identify your site in a collection of tabs (if you browse like I do) and makes it easier to return to your site.*
-* **Robots** (for some pages) - *although not required across the site, you would do well to identify pages that you may not want indexing, such as contact form 'thank you' pages.*
-* **Breadcrumb JSON Schema** *\- for sites with multiple levels, providing search engines this schema will provide greater context for the structure of your site. If this is the case I would also recommend that you provide this visually for users as well.*
+* <a href="https://moz.com/learn/seo/title-tag" target="_blank">**Meta Title**</a> - *e.g. Page Title | Site Name, aim to keep it under 60 characters.*
+* <a href="https://moz.com/learn/seo/meta-description" target="_blank">**Meta Description**</a> - *a more expansive description of what the page content is about. Aim to keep within about 160 characters.*
+* <a href="https://moz.com/learn/seo/canonicalization" target="_blank">**Canonical Tag**</a> *\- set the definitive URL for the page to avoid duplicate content penalties, this can happen if your site is accessible from multiple URLs (with and without trailing slash, with query strings etc)*
+* <a href="https://realfavicongenerator.net/" target="_blank">**Favicon**</a> *\- this makes it easier for users to identify your site in a collection of tabs (if you browse like I do) and makes it easier to return to your site.*
+* <a href="https://moz.com/learn/seo/robots-meta-directives" target="_blank">**Robots**</a> (for some pages) - *although not required across the site, you would do well to identify pages that you may not want indexing, such as contact form 'thank you' pages.*
+* <a href="https://schema.org/BreadcrumbList" target="_blank">**Breadcrumb JSON Schema**</a> *\- for sites with multiple levels, providing search engines this schema will provide greater context for the structure of your site. If this is the case I would also recommend that you provide this visually for users as well.*[](https://css-tricks.com/essential-meta-tags-social-media/)
 
 And an honorary mention:
 
-* **Social Meta Tags** *\- although not strictly SEO relevant, defining how your site will appear when shared on social can greatly increase the chance of people clicking through to your site and this is obviously good!*
+* <a href="https://css-tricks.com/essential-meta-tags-social-media/" target="_blank">**Social Meta Tags**</a> *\- although not strictly SEO relevant, defining how your site will appear when shared on social can greatly increase the chance of people clicking through to your site and this is obviously good!*
 
 In addition to these I would also look into additional JSON schema, to provide search engines further information about your content. An example of this was the podcast episode schema data example I showed earlier. Here are some good schemas that you might want to take a look at adding if appropriate:
 
-* <a href="<https://schema.org/Organization>" target="_blank">Organisation</a> - This gives you the opportunity to define things like the company logo and contact details (used in company details in Google Knowledge Graph).
-* <a href="[](https://schema.org/Organization)<https://schema.org/Product>" target="_blank">Product</a> - For e-commerce sites, providing detailed information of the product to search engines will help improve search listing data.
-* <a href="[](https://schema.org/Organization)<https://schema.org/Article>" target="_blank">Article</a> - [](https://schema.org/Article)This lets you provide context around your article such as when it was published and author data.
-* <a href="[](https://schema.org/Organization)<https://schema.org/LocalBusiness>" target="_blank">Local Business</a> - [](https://schema.org/Article)To help users find details about your business such as address, phone number and email address, you can use this schema.
+* <a href="https://schema.org/Organization" target="_blank">Organisation</a> - This gives you the opportunity to define things like the company logo and contact details (used in company details in Google Knowledge Graph).
+* <a href="https://schema.org/Product" target="_blank">Product</a> - For e-commerce sites, providing detailed information of the product to search engines will help improve search listing data.
+* <a href="https://schema.org/Article" target="_blank">Article</a> - [](https://schema.org/Article)This lets you provide context around your article such as when it was published and author data.
+* <a href="https://schema.org/LocalBusiness" target="_blank">Local Business</a> - [](https://schema.org/Article)To help users find details about your business such as address, phone number and email address, you can use this schema.
 
 ## Time to start using react-helmet
 
