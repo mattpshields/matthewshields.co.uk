@@ -5,7 +5,7 @@ short_description: >-
   Managing the <head> of your HTML document is made very easy using the
   react-helmet component. In this post we look at how to do it and what are the
   minimum SEO tags that you should be including with it.
-date: 2020-04-06T07:34:43.965Z
+date: 2020-04-13T19:34:43.965Z
 social_image: using-react-helmet-to-manage-document-head-seo-tags.jpg
 slug: using-react-helmet-to-manage-document-head-seo-tags
 ---
