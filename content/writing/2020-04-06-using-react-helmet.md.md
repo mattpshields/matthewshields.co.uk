@@ -15,7 +15,7 @@ The document head serves some very important uses:
 
 * Providing context as you move between different pages.
 * Search Engine Optimisation (SEO) through elements such as the title and meta description.
-* Avoiding Google duplicate content penalties with an appropriate <a href="<https://moz.com/learn/seo/canonicalization>" target="_blank">canonical tag</a>.
+* Avoiding Google duplicate content penalties with an appropriate <a href="https://moz.com/learn/seo/canonicalization" target="_blank">canonical tag</a>.
 * Controlling the images used when your page is shared on social media for maximum impact.
 * Providing additional information to services through schema data.
 * As well as so many more that I can't list them all - luckily <a href="https://github.com/joshbuchea/HEAD" target="_blank">Josh Buchea</a> has!
@@ -184,16 +184,16 @@ export default function Template({ data }) {
 
 Now that you know *how* to manage your document head using react-helmet, *what* should you be adding into it? As previously stated there are a huge variety of tags that can be added, but my advice to you would be to ensure that at a **minimum** your site includes the following:
 
-* <a href="<https://moz.com/learn/seo/title-tag>" target="_blank">**Meta Title**</a> - *e.g. Page Title | Site Name, aim to keep it under 60 characters.*
-* <a href="<https://moz.com/learn/seo/meta-description>" target="_blank">**Meta Description**</a> - *a more expansive description of what the page content is about. Aim to keep within about 160 characters.*
-* <a href="<https://moz.com/learn/seo/canonicalization>" target="_blank">**Canonical Tag**</a> *\- set the definitive URL for the page to avoid duplicate content penalties, this can happen if your site is accessible from multiple URLs (with and without trailing slash, with query strings etc)*
-* <a href="<https://realfavicongenerator.net/>" target="_blank">**Favicon**</a> *\- this makes it easier for users to identify your site in a collection of tabs (if you browse like I do) and makes it easier to return to your site.*
-* <a href="<https://moz.com/learn/seo/robots-meta-directives>" target="_blank">**Robots**</a> (for some pages) - *although not required across the site, you would do well to identify pages that you may not want indexing, such as contact form 'thank you' pages.*
-* <a href="<https://schema.org/BreadcrumbList>" target="_blank">**Breadcrumb JSON Schema**</a> *\- for sites with multiple levels, providing search engines this schema will provide greater context for the structure of your site. If this is the case I would also recommend that you provide this visually for users as well.*[](https://css-tricks.com/essential-meta-tags-social-media/)
+* <a href="https://moz.com/learn/seo/title-tag" target="_blank">**Meta Title**</a> - *e.g. Page Title | Site Name, aim to keep it under 60 characters.*
+* <a href="https://moz.com/learn/seo/meta-description" target="_blank">**Meta Description**</a> - *a more expansive description of what the page content is about. Aim to keep within about 160 characters.*
+* <a href="https://moz.com/learn/seo/canonicalization" target="_blank">**Canonical Tag**</a> *\- set the definitive URL for the page to avoid duplicate content penalties, this can happen if your site is accessible from multiple URLs (with and without trailing slash, with query strings etc)*
+* <a href="https://realfavicongenerator.net/" target="_blank">**Favicon**</a> *\- this makes it easier for users to identify your site in a collection of tabs (if you browse like I do) and makes it easier to return to your site.*
+* <a href="https://moz.com/learn/seo/robots-meta-directives" target="_blank">**Robots**</a> (for some pages) - *although not required across the site, you would do well to identify pages that you may not want indexing, such as contact form 'thank you' pages.*
+* <a href="https://schema.org/BreadcrumbList" target="_blank">**Breadcrumb JSON Schema**</a> *\- for sites with multiple levels, providing search engines this schema will provide greater context for the structure of your site. If this is the case I would also recommend that you provide this visually for users as well.*[](https://css-tricks.com/essential-meta-tags-social-media/)
 
 And an honorary mention:
 
-* <a href="[](https://schema.org/BreadcrumbList)<https://css-tricks.com/essential-meta-tags-social-media/>" target="_blank">**Social Meta Tags**</a> *\- although not strictly SEO relevant, defining how your site will appear when shared on social can greatly increase the chance of people clicking through to your site and this is obviously good!*
+* <a href="https://css-tricks.com/essential-meta-tags-social-media/" target="_blank">**Social Meta Tags**</a> *\- although not strictly SEO relevant, defining how your site will appear when shared on social can greatly increase the chance of people clicking through to your site and this is obviously good!*
 
 In addition to these I would also look into additional JSON schema, to provide search engines further information about your content. An example of this was the podcast episode schema data example I showed earlier. Here are some good schemas that you might want to take a look at adding if appropriate:
 
