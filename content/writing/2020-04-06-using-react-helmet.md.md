@@ -1,14 +1,11 @@
 ---
 post_type: post
-title: Using React Helmet to Manage the Document Head (and improve SEO)
-short_description: >-
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa nulla
-  veritatis beatae ullam quas repellendus praesentium corporis deserunt ab porro
-  alias debitis voluptatum, dignissimos adipisci, dolor laborum minus hic!
+title: Using React Helmet to Manage the Document Head and SEO tags
+short_description: 'Managing '
 date: 2020-04-06T07:34:43.965Z
-slug: using-react-helmet-to-manage-document-head
+slug: using-react-helmet-to-manage-document-head-seo-tags
 ---
-One of the first things that I had to figure out when working with React was how to be able to manage the elements outside the React application, namely the contents of the <head>. As you build targetting an element within the body, how do you easily manage the <head> elements from with React?
+One of the first things that I had to figure out when working with React was how to be able to manage the elements outside the React application, namely the contents of the <head>. As you build targeting an element within the body, how do you easily manage the <head> elements from within React?
 
 The document head serves some very important uses:
 
@@ -16,18 +13,18 @@ The document head serves some very important uses:
 * Search Engine Optimisation (SEO) through elements such as the title and meta description.
 * Avoiding Google duplicate content penalties with an appropriate canonical tag.
 * Controlling the images used when your page is shared on social media for maximum impact.
-* Providing additional information to services through Schema data.
-* And so many more that I can't list them all - luckily <a href="<https://github.com/joshbuchea/HEAD>" target="_blank">Josh Buchea</a> has!
+* Providing additional information to services through schema data.
+* As well as so many more that I can't list them all - luckily <a href="<https://github.com/joshbuchea/HEAD>" target="_blank">Josh Buchea</a> has!
 
-An issue that I have seen a lot with React sites in production sites has been the lack of unique meta titles and descriptions, with generic text being applied throughout the site.
+A common issue with React sites in production sites is the lack of unique meta titles and descriptions, with generic text being applied throughout the site.
 
-I work at an agency which specialises in SEO, so this has always been an important factor in my professional work, and knew was something that I would require if I was to bring React into our commercial stack. This meant it was something that I needed to be able to easily manage, but also pass the SEO requirements as well.
+I work at an agency which specialises in SEO, so there's always been an importance for this in my professional work and I knew this was something that I would require if I was to bring React into our commercial stack. This meant it was something that I needed to be able to easily manage, but also have pass the SEO requirements.
 
 ## The NFL to the rescue: react-helmet
 
-Although not into sports of any variety, consider me a fan for this React component from the development team at the NFL. <a href="<https://github.com/nfl/react-helmet>" target="_blank">react-helmet</a> provides a very accessible way to control any elements of the document head including title, base, meta, link, script, noscript, and style tags from within any level of your React application.
+Although not into sports of any variety, consider me a fan for this React component from the development team at the NFL. <a href="<https://github.com/nfl/react-helmet>" target="_blank">'react-helmet'</a> provides a very accessible way to control any elements of the document head including title, base, meta, link, script, noscript, and style tags within any level of your React application.
 
-You can do this by importing react-helmet, and then passing as child elements the tags that you are wanting to appear in the document head. You can see in this example from their <a href="<https://github.com/nfl/react-helmet>" target="_blank">GitHub page</a> how they are passing JSX markup as a child of the component for them to be added.
+You can add these tags by first importing react-helmet and then passing as child elements the tags that you are wanting to appear in the document head. You can see in this example from their <a href="<https://github.com/nfl/react-helmet>" target="_blank">GitHub page</a>, how they are passing JSX markup as a child of the component for them to be added.
 
 ```javascript
 import React from "react";
@@ -49,13 +46,13 @@ class Application extends React.Component {
 };
 ```
 
-Genuinely one of the amazing things about react-helmet is its ease of use, providing much-needed functionality for a technically performant site, without asking much from the developer to integrate.
+One of the amazing things about react-helmet is its ease of use, providing much-needed functionality for a technically performant site, without asking much from the developer to integrate.
 
 ## Where do I use it?
 
-So with the fact that we aren't actually putting the code into the document head, where do we put it within our React application? 
+You're not actually putting the code into the document head, so where do you put it within the React application? 
 
-You can add it into any component and react-helmet will work from there. The approach that quite a lot of sites or frameworks using react-helmet take is to create an SEO component that when passed the node data for the particular page or post you are on will take the title, description etc and have a generic component that creates the tags there. 
+You can add it into any component and react-helmet will work from there. The approach that quite a lot of sites or frameworks using react-helmet take is to create an SEO component. This component, when passed the node data for the particular page or post you are on, will take the title and description etc and have a generic component that creates the tags there. 
 
 ```javascript
 import React, { Component } from "react";
@@ -112,9 +109,9 @@ This approach has worked really well for me as it means that I don't have to hav
 
 A great feature of react-helmet is that it will deal with multiple instances with ease, combining them. This means that you can add additional tags in the individual template or component where you require it, such as JSON schema. Note that it will give priority to the last instance whenever there are duplicate properties, so you can overwrite anything, dictated by the order of where it was defined.
 
-What could you use this for? Examples of where this could be useful is if you wanted to have a different favicon to show the status of a process such as an upload being paused, or a title change when displaying content in a modal. This would give us the ability to actually improve user experience as well, giving the user additional visual queues.
+What could you use this for? If you wanted to have a different favicon to show the status of a process such as an upload being paused, or a title change when displaying content in a modal. This would give you the ability to improve user experience, giving the user additional visual cues.
 
-In the example below, imagining a podcast player, the page would standardly display the favicon as defined in the SEO component. When the components state indicates that the player's state is playing or paused, because they came after they would overwrite the defined favicon and be displayed.
+In the example below, imagining a podcast player, the page would standardly display the favicon as defined in the SEO component. When the podcast player's state indicates that it is playing or paused (because they came after the SEO component), the defined favicon would be overwritten.
 
 ```javascript
 render() {
@@ -181,21 +178,23 @@ export default function Template({ data }) {
 
 ## SEO Requirements for the document head
 
-Now that you know **how** to manage your document head using react-helmet, **what** should you be adding into it? As previously stated there are a huge variety of tags that can be added, but my advice to you would be to ensure that at a **minimum** your site includes the following:
+Now that you know *how* to manage your document head using react-helmet, *what* should you be adding into it? As previously stated there are a huge variety of tags that can be added, but my advice to you would be to ensure that at a **minimum** your site includes the following:
 
 * **Meta Title** - *e.g. Page Title | Site Name, aim to keep it under 60 characters.*
-* **Meta Description** - *a bit more expansive description of what the page content is about. Aim to keep within about 160 characters.*
+* **Meta Description** - *a more expansive description of what the page content is about. Aim to keep within about 160 characters.*
 * **Canonical Tag** *\- set the definitive URL for the page to avoid duplicate content penalties, this can happen if your site is accessible from multiple URLs (with and without trailing slash, with query strings etc)*
 * **Favicon** *\- this makes it easier for users to identify your site in a collection of tabs (if you browse like I do) and makes it easier to return to your site.*
 * **Robots** (for some pages) - *although not required across the site, you would do well to identify pages that you may not want indexing, such as contact form 'thank you' pages.*
-* **Breadcrumb JSON Schema** *\- for sites with multiple levels, providing search engines this schema will provide greater context of the structure of your site. If this is the case I would also recommend that you provide this visually for users as well.*
+* **Breadcrumb JSON Schema** *\- for sites with multiple levels, providing search engines this schema will provide greater context for the structure of your site. If this is the case I would also recommend that you provide this visually for users as well.*
 
 And an honorary mention:
 
 * **Social Meta Tags** *\- although not strictly SEO relevant, defining how your site will appear when shared on social can greatly increase the chance of people clicking through to your site and this is obviously good!*
 
-In addition to these I would also look into additional JSON schema, to provide search engines further information about your content. An example of this was the podcast episode schema data example I showed earlier.
+In addition to these I would also look into additional JSON schema, to provide search engines further information about your content. An example of this was the podcast episode schema data example I showed earlier. Here are some good schemas that you might want to take a look at adding:
+
+* <a href="<https://schema.org/Organization>" target="_blank">Organisation</a> - This gives you the opportunity to define things like the company logo
 
 ## Time to start using react-helmet
 
-I hope these examples have convinced you that if you aren't already using react-helmet to manage your document head then it might be time to start. From SEO to user experience there are lots of benefits to taking the tags included in the document head into consideration, and now should be easier for you to implement.
+I hope these examples have convinced you that if you aren't already using react-helmet to manage your document head then it might be time to start. From SEO to user experience there are lots of benefits to taking the tags included in the document head into consideration, and now they should be easier for you to implement.
