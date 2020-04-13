@@ -179,6 +179,23 @@ export default function Template({ data }) {
 }
 ```
 
+## SEO Requirements for the document head
+
+Now that you know **how** to manage your document head using react-helmet, **what** should you be adding into it? As previously stated there are a huge variety of tags that can be added, but my advice to you would be to ensure that at a **minimum** your site includes the following:
+
+* **Meta Title** - *e.g. Page Title | Site Name, aim to keep it under 60 characters.*
+* **Meta Description** - *a bit more expansive description of what the page content is about. Aim to keep within about 160 characters.*
+* **Canonical Tag** *\- set the definitive URL for the page to avoid duplicate content penalties, this can happen if your site is accessible from multiple URLs (with and without trailing slash, with query strings etc)*
+* **Favicon** *\- this makes it easier for users to identify your site in a collection of tabs (if you browse like I do) and makes it easier to return to your site.*
+* **Robots** (for some pages) - *although not required across the site, you would do well to identify pages that you may not want indexing, such as contact form 'thank you' pages.*
+* **Breadcrumb JSON Schema** *\- for sites with multiple levels, providing search engines this schema will provide greater context of the structure of your site. If this is the case I would also recommend that you provide this visually for users as well.*
+
+And an honorary mention:
+
+* **Social Meta Tags** *\- although not strictly SEO relevant, defining how your site will appear when shared on social can greatly increase the chance of people clicking through to your site and this is obviously good!*
+
+In addition to these I would also look into additional JSON schema, to provide search engines further information about your content. An example of this was the podcast episode schema data example I showed earlier.
+
 ## Time to start using react-helmet
 
 I hope these examples have convinced you that if you aren't already using react-helmet to manage your document head then it might be time to start. From SEO to user experience there are lots of benefits to taking the tags included in the document head into consideration, and now should be easier for you to implement.
