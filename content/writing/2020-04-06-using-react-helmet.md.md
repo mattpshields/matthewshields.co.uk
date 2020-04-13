@@ -1,8 +1,12 @@
 ---
 post_type: post
 title: Using React Helmet to Manage the Document Head and SEO tags
-short_description: 'Managing '
+short_description: >-
+  Managing the <head> of your HTML document is made very easy using the
+  react-helmet component. In this post we look at how to do it and what are the
+  minimum SEO tags that you should be including with it.
 date: 2020-04-06T07:34:43.965Z
+social_image: using-react-helmet-to-manage-document-head-seo-tags.jpg
 slug: using-react-helmet-to-manage-document-head-seo-tags
 ---
 One of the first things that I had to figure out when working with React was how to be able to manage the elements outside the React application, namely the contents of the <head>. As you build targeting an element within the body, how do you easily manage the <head> elements from within React?
