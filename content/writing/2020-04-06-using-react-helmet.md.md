@@ -197,10 +197,10 @@ And an honorary mention:
 
 In addition to these I would also look into additional JSON schema, to provide search engines further information about your content. An example of this was the podcast episode schema data example I showed earlier. Here are some good schemas that you might want to take a look at adding if appropriate:
 
-* <a href="https://schema.org/Organization" target="_blank">Organisation</a> - This gives you the opportunity to define things like the company logo and contact details (used in company details in Google Knowledge Graph).
-* <a href="https://schema.org/Product" target="_blank">Product</a> - For e-commerce sites, providing detailed information of the product to search engines will help improve search listing data.
-* <a href="https://schema.org/Article" target="_blank">Article</a> - [](https://schema.org/Article)This lets you provide context around your article such as when it was published and author data.
-* <a href="https://schema.org/LocalBusiness" target="_blank">Local Business</a> - [](https://schema.org/Article)To help users find details about your business such as address, phone number and email address, you can use this schema.
+* <a href="https://schema.org/Organization" target="_blank">**Organisation**</a> - This gives you the opportunity to define things like the company logo and contact details (used in company details in Google Knowledge Graph).
+* <a href="https://schema.org/Product" target="_blank">**Product**</a> - For e-commerce sites, providing detailed information of the product to search engines will help improve search listing data.
+* <a href="https://schema.org/Article" target="_blank">**Article**</a> - This lets you provide context around your article such as when it was published and author data.
+* <a href="https://schema.org/LocalBusiness" target="_blank">**Local Business**</a> - To help users find details about your business such as address, phone number and email address, you can use this schema.
 
 ## Time to start using react-helmet
 
