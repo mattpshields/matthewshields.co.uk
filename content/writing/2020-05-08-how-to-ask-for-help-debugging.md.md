@@ -72,9 +72,9 @@ In this real world example, I actually couldn't help the person immediately, but
 
 The final step of any help that you have received debugging is to invest some of your time into understanding the solution. The problem you were having has (hopefully) now been solved, and you may have the urge to move onwards, however you must fight this and make sure that you take time for this step.
 
-This is the part that makes sure that you use the opportunity to learn as a developer, taking on board the knowledge shared, otherwise you may well end up at the same issue in the future. Personally I also think this is the final way of showing respect to those who have invested time into helping you, making the most out of the time they invested. Whenever people help me I always make sure that I take time to do this, and wherever possible I will drop them a note after the fact to say thanks, and let them know that it has helped and how.
+This is the part that makes sure that you use the opportunity to learn as a developer, taking on board the knowledge shared, otherwise you may well end up at the same issue in the future. Personally I also think this is the final way of showing appreciation to those who have invested time into helping you, making the most out of the time they invested. 
 
-Whenever someone has told me that my help has made something make more sense to them, however big or small, it has been really rewarding to know that. So I always try to make sure I do the same for people who help me.
+Whenever people help me I always make sure that I take time to do this, and wherever possible I will drop them a note after the fact to say thanks, and let them know that it has helped and how. Whenever someone has told me that my help has made something make more sense to them, however big or small, it has been really rewarding to know that. So I always try to make sure I do the same for people who help me.
 
 ### Side note update
 
