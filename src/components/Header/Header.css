@@ -101,6 +101,7 @@
 .main-nav__item a {
   display: block;
   text-align: center;
+  font-weight: 700;
 }
 
 .main-nav__item a:after {

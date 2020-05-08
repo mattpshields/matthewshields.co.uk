@@ -25,6 +25,7 @@
 @media screen and (min-width: 800px) {
   .options-list__label {
     width: 200px;
+    min-width: 200px;
     font-weight: 700;
   }
 }
