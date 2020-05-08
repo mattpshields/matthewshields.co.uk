@@ -6,6 +6,8 @@ short_description: >-
   wrong with that. Helping each other is one of the great parts of being in a
   team, what we will look at here though is how to do this.
 date: 2020-05-08T09:09:17.848Z
+cover: ''
+social_image: how-to-ask-for-help-debugging-the-right-way.jpg
 slug: how-to-ask-for-help-debugging-the-right-way
 ---
 If anyone was to tell me that they've never needed help debugging something in their career, I think a suspicious glare would be my only response. We've all needed to ask someone to help us at some time or other, this is healthy as it allows you to learn new approaches to problems and become a better developer. There are however good ways to ask for this help, and bad ways.
