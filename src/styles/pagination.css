@@ -45,6 +45,7 @@
 }
 
 .paging-button {
+  font-weight: 700;
   display: block;
   text-align: center;
   padding: 8px 10px 5px;
