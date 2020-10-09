@@ -13,8 +13,8 @@ On top of this these images often differ between each page as well, and so won't
 
 Images will impact performance, images aren't going anywhere and images need to be used responsibly. This means it's our responsibility to ensure we lessen their impact wherever possible, and there are several steps that we can take to do so.
 
-* **Appropriately size images** – oversized images will require more image weight to be downloaded then is required resulting in waste.
-* **Optimise images** – depending on how the image was saved there might be a extra data in there bloating the image, or maybe the quality could be dropped a little. Its always worth running through compression.
+* **Appropriately size images** – oversized images will require more image weight to be downloaded than is required resulting in waste.
+* **Optimise images** – depending on how the image was saved there might be extra data bloating the image, or maybe the quality could be dropped a little. It's always worth running through compression.
 * **Use responsive images** – don't make all devices pay the price for catering for the worst (or largest) case scenario unnecessarily.
 * **Use optimal image formats** – maybe you have a large image of a simple shape as a JPG, or maybe you have non-transparent PNGs which would be better served in another format.
 * **Use modern filetypes** – related to the last point, there are more modern filetypes that you might not be aware of that might give you better performance.
