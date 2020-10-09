@@ -11,6 +11,8 @@ These images do have an impact though, they can very quickly add up to being a l
 
 On top of this these images often differ between each page as well, and so won't always benefit from browser caching when navigating. This can be unlike things like CSS and JavaScript which ***may*** be global to the site and only need to be downloaded once for multiple pages.
 
+## So what do we do to lessen the impact of images on page performance
+
 Images will impact performance, images aren't going anywhere and images need to be used responsibly. This means it's our responsibility to ensure we lessen their impact wherever possible, and there are several steps that we can take to do so.
 
 * **Appropriately size images** – oversized images will require more image weight to be downloaded than is required resulting in waste.
