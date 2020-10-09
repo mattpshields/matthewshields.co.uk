@@ -19,6 +19,4 @@ Essentially images will impact performance, images aren't going anywhere and ima
 * **Use optimal image formats** – maybe you have a large image of a simple shape as a JPG, or maybe you have non-transparent PNGs which would be better served in another format.
 * **Use modern filetypes** – related to the last point, there are more modern filetypes that you might not be aware of that might give you better performance.
 
-There are lots of different ways that you could do all of the above, from having it be part of your build process, integrating it into your chosen CMS platform or manually. This honestly depends on the kind of site that you are building and how regularly you would be updating content.
-
-My recommendation though would be to automate it wherever possible, meaning that you are lessening the chances that you will miss or skip images over time. This is definitely the case if it is a CMS to be handed over to someone else, so that your hard work doesn't go to waste over time as performance decreases.
+My recommendation though would be to automate these optimisations wherever possible, meaning that you are lessening the chances that you will miss or skip images over time. This is definitely the case if it is a CMS to be handed over to someone else, so that your hard work doesn't go to waste over time as performance decreases.
