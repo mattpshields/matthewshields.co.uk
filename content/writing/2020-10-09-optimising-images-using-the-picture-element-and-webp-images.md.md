@@ -20,9 +20,9 @@ Images will impact performance, images aren't going anywhere and images need to 
 * **Use responsive images** – don't make all devices pay the price for catering for the worst (or largest) case scenario unnecessarily.
 * **Use optimal image formats** – maybe you have a large image of a simple shape as a JPG, or maybe you have non-transparent PNGs which would be better served in another format.
 * **Use modern filetypes** – related to the last point, there are more modern filetypes that you might not be aware of that might give you better performance.
-* **Lazy loading** – related to the last point, there are more modern filetypes that you might not be aware of that might give you better performance.
+* **Lazy loading** – are you loading all images on initial page load? maybe some of those images could wait a while if they are further down the page.
 
-My recommendation though would be to automate these optimisations wherever possible, meaning that you are lessening the chances that you will miss or skip images over time. This is definitely the case if it is a CMS to be handed over to someone else, so that your hard work doesn't go to waste over time as performance decreases.
+My recommendation though would be to automate these optimisations wherever possible, meaning that you are lessening the chances that you will miss or skip images over time. This is definitely the case if it is a CMS to be handed over to someone else, so that your hard work doesn't go to waste over time if this isn't maintained and performance decreases.
 
 ## Using the <picture> element
 
