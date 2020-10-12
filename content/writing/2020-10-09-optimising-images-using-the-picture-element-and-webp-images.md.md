@@ -24,6 +24,12 @@ Images will impact performance, images aren't going anywhere and images need to 
 
 My recommendation though would be to automate these optimisations wherever possible, meaning that you are lessening the chances that you will miss or skip images over time. This is definitely the case if it is a CMS to be handed over to someone else, so that your hard work doesn't go to waste over time if this isn't maintained and performance decreases.
 
+The approaches for these points will require different implementations 
+
+## Images old and new
+
 ## Using the <picture> element
+
+
 
 ## What about sizing and optimising images?
