@@ -33,21 +33,21 @@ When it comes to optimising images and using the most appropriate filetypes, thi
 
 If image optimisation is something that you want to know more about then I would recommend searching for an article focusing on your specific platform, I can nearly guarantee that for any popular platform posts on this will exist and is definitely worth investing some time into making sure you have image optimisation running! I will also be following up with a post about appropriate file types soon so I will go into more detail about this then as its definitely a topic all of it's own.
 
-## Lets get started, with an image tag
+## Lets get started, with a standard image tag
 
 You may well be used to using images like this and be wondering, with the limited options available how would be implement the things that we are wanting to? You could be picturing what plugins, or what logic you might need to create to tick them all off. 
 
-Luckily in more modern browsers, you have been given a whole bunch of the tools that you need already and we are actually going to do all the above with just HTML, no JavaScript **required*** here.
+Luckily in more modern browsers, you have been given a whole bunch of the tools that you need already and we are actually going to do all the above with just HTML, no JavaScript required* here.
 
 ```html
 <img src="example.jpg" alt="descriptive text of the image">
 ```
 
-\*depending on your browser support goals, you may need to bring in some JavaScript polyfills to give you the support you require
+\* Disclaimer: depending on your browser support goals, you may need to bring in some JavaScript polyfills to give you the support you require.
 
 ## Using srcset to optimise image performance
 
-Something that you might have heard of is srcset, which if you haven't heard of it is a way of providing more than one image source to a single image tag, along with hints about when each image source should be used.
+Something that you might have heard of or have seen is srcset, which if you haven't heard of it is a way of providing more than one image source to a single image tag, along with hints about when each image source should be used.
 
 When using srcset you may end up with something like this:
 
@@ -90,17 +90,17 @@ alt="descriptive text of the image"
 
 It is also worth noting that you can't provide these sizes as percentages. This has been done to [avoid confusion](https://www.w3.org/TR/2015/WD-html51-20150506/semantics.html#valid-source-size-list) as to what the percentages would be relative to (i.e. the parent element). If you are after a fluid value then you would have to use vw.
 
+And with that we have officially implemented responsive images! You now have the ability to load optimised images for specific viewport sizes and resolutions, a great first step in optimising the performance impact from images The first item on the list is ticked off. High five.
+
+
+
 ### So has srcset fixed everything?
 
 Well its done pretty damn well hasn't it! So far using srcset our checklist from the start of this is looking pretty ticked off:
 
-
-
-* **Use appropriately sized and optimised images**
-* **Use responsive images** – don't make all devices pay the price for catering for the worst (or largest) case scenario unnecessarily.
-* **Use optimal image formats** – maybe you have a large image of a simple shape as a JPG, or maybe you have non-transparent PNGs which would be better served in another format.
-* **Use modern filetypes** – related to the last point, there are more modern filetypes that you might not be aware of that might give you better performance.
-* **Lazy loading images** – are you loading all images on initial page load? maybe some of those images could wait a while if they are further down the page.
+* **Use responsive images**
+* **Use modern filetypes**
+* **Lazy loading images**
 
 ## Using the <picture> element
 
