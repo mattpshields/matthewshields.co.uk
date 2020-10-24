@@ -98,7 +98,7 @@ JPGs, PNGs, GIFs and even SVGs are image types that you have probably used regul
 
 With this range in browser support, these can be harder to use with srcset. Even with such great options in terms of responsive imagery based off of viewports, this isn't aimed at browser support, meaning that you would be limited to using specific filetypes. This means that you would have to choose between the performance improvement or unsupported browsers. Luckily there is another way that we can do just that, using a <picture> element.
 
-
+### What is the picture element and how does it work?
 
 
 
