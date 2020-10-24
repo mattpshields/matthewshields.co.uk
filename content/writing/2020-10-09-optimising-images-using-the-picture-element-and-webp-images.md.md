@@ -92,6 +92,10 @@ It is also worth noting that you can't provide these sizes as percentages. This 
 
 And with that we have officially implemented responsive images! You now have the ability to load optimised images for specific viewport sizes and resolutions, a great first step in optimising the performance impact from images The first item on the list is ticked off. High five.
 
+## Next up, using modern filetypes
+
+
+
 
 
 ### So has srcset fixed everything?
