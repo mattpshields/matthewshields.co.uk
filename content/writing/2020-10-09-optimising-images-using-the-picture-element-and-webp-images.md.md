@@ -94,6 +94,14 @@ And with that we have officially implemented responsive images! You now have the
 
 ## Next up, using modern filetypes
 
+JPGs, PNGs, GIFs and even SVGs are image types that you have probably used regularly. There are newer file types that you might not be as familiar with though that can give you better compression, such as WebP or AVIF. These more modern filetypes can deliver much greater performance, however browser support can vary greatly.
+
+Because of this range in browser support, these can be harder to use with srcset. Even with such great options in terms of responsive imagery, there isn't an in
+
+
+
+
+
 
 
 
