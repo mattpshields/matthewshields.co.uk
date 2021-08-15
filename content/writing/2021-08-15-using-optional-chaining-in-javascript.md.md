@@ -14,7 +14,12 @@ It's still a relatively new feature and only got more widespread browser support
 
 ## What is so good about Optional Chaining?
 
-I think to see how neat this feature is, let's first take a look at what you might have to do without it. Let's take the example of a made up JavaScript object that you may be working with / be provided with, in this case me pretending that I'm back at university and enrolled in a course *(if only...).*
+In short I think the best things about Optional Chaining are:
+
+* Write less code
+* Code is easier to read
+
+I think though to really see how neat this feature is, let's first take a look at what you might have to do without it. Let's take the example of a made up JavaScript object that you may be working with / be provided with, in this case me pretending that I'm back at university and enrolled in a course *(if only...).*
 
 ```javascript
 const api_response = {
