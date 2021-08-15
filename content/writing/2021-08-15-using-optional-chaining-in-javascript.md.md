@@ -324,6 +324,8 @@ As a little pointer as I discovered myself recently, Netlify Serverless Function
 AWS_LAMBDA_JS_RUNTIME = nodejs14.x
 ```
 
+## Wrapping it up on this one
+
 Apart from the fact that I've said Optional Chaining outloud proof-reading this enough times that they don't even sound like real words anymore - I am genuinely excited about using this feature more.
 
 As I said at the beginning of this, my work has started to integrate with APIs more, and so the variable data that comes with that has become more a part of my work as well. Even over the last couple of months this has made a marked improvement to my experience.
