@@ -286,7 +286,7 @@ if(api_response?.user?.name?.firstName) {
 
 ## Requirements and Browser Support
 
-The support coverage for this feature has a really good 
+The support coverage for this feature has a really good coverage at this time, covering all major browsers with the exception of Internet Explorer.
 
 <picture>
 <source type="image/webp" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__optional_chaining-1629034552274.webp">
@@ -299,3 +299,23 @@ The support coverage for this feature has a really good
 <source type="image/png" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__nullish_coalescing-1629034902817.png">
 <img src="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__nullish_coalescing-1629034902817.jpg" alt="Data on support for the mdn-javascript__operators__nullish_coalescing feature across the major browsers from caniuse.com">
 </picture>
+
+If your support requirements aren't covered by this though (I sometimes am still supporting IE myself), its important to note that Babel can transpile Optional Chaining and so you can still use this despite that!
+
+If you are working with Node then you will require Node 14 minimum to utilise this.
+
+### Tip: Are you using Netlify Serverless Functions?
+
+Just as a little pointer as I discovered myself recently, Netlify Serverless Functions by default are at the time of writing using Node 12, however you can easily change this by adding a variable to site settings trough the Netlify UI as [described here](https://docs.netlify.com/functions/build-with-javascript/#runtime-settings).
+
+```
+AWS_LAMBDA_JS_RUNTIME = nodejs14.x
+```
+
+## In Conclusion
+
+Apart from the fact that I've said Optional Chaining outloud proof-reading this enough times that they don't even sound like real words anymore - I am genuinely excited about using this feature more.
+
+As I said at the beginning of this, my work has started to integrate with APIs more, and so the variable data that comes with that has become more a part of my work as well. Even over the last couple of months this has made a marked improvement to my experience.
+
+But what about you? Have you had differing experiences or are there any gotchas that I am yet to come across? Let me know if there are!
