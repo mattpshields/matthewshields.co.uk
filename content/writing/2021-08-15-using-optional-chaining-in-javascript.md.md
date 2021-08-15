@@ -1,12 +1,10 @@
 ---
 post_type: post
-title: Using Optional Chaining in JavaScript
+title: Using Optional Chaining and Nullish Coalescing Operator in JavaScript
 short_description: TO DO
 date: 2021-08-15T11:07:23.640Z
-slug: optional-chaining-in-javascript
+slug: using-optional-chaining-and-nullish-coalescing-operator-in-javascript
 ---
-
-
 Optional chaining is a great feature in order fo you to streamline some of checks that you need to have in your code to looking for the presence of elements and data, esspecially nested data multiple levels in!
 
 It is still a realtively new feature and only getting more widespread browser support around early 2020, however this is something that has really shown how useful it is to me personally as my work has included more API driven and JAMstack development. Since then though my mind has been blown away with just how much cleaner it can make your code, and easier to write too 🤯
@@ -142,10 +140,6 @@ The data situation that we have looked at so far is just a context that I think 
 
 If you remember the concept is that in the event of a null reference preceding it, it will stop and not continue there are multiple ways that you can use this:
 
-*
-
-
-
 ### Get element attribute
 
 ```javascript
@@ -153,7 +147,7 @@ If you remember the concept is that in the event of a null reference preceding i
 // With Optional Chaining
 // -------------------------------
 const heroImageSrc = document.getElementById('hero-image')?.getAttribute('src');
-// Return the first item in array if exists or undefined (but no error!)
+// If the #hero-image element exists then get its src attribute else undefined
 
 
 // -------------------------------
@@ -161,19 +155,19 @@ const heroImageSrc = document.getElementById('hero-image')?.getAttribute('src');
 // -------------------------------
 const heroImage = document.getElementById('hero-image');
 const heroImageSrc = heroImage ? heroImage.getAttribute('src') : undefined;
-// First check if there are any items in the array, then if so get the first item else undefined
+// First get the #hero-image element then check if that exists before getting its src attribute or undefined
 ```
 
 ### Get first element in array
 
-Note: Notice that you aren't just adding a **?** preceding a usual **.** - the optional chaining operator is ?. so add both before your square brackets.
+Note: Notice that you aren't just adding a **?** preceding a usual **.** the optional chaining operator is **?.**  - so add both before your square brackets!
 
 ```javascript
 // -------------------------------
 // With Optional Chaining
 // -------------------------------
 const firstItemInArray = array_data?.[0];
-// Return the first item in array if exists or undefined (but no error!)
+// Return the first item in array if exists or undefined
 
 
 // -------------------------------
@@ -183,14 +177,92 @@ const firstItemInArray = (array_data.length > 0) ? array_data[0] : undefined;
 // First check if there are any items in the array, then if so get the first item else undefined
 ```
 
-It is worth 
+### Call function only if it exists
 
-It is worth 
+```javascript
+const api_response = {
+  user: {
+    name: {
+      firstName: "Matthew",
+      lastName: "Shields"
+    },
+    currentCourse: {
+      courseDetails: {
+        name: "Visual Communication",
+        location: "Leeds Art University"
+      },
+      tutorDetails: {
+        name: "Mr G Tansley",
+        email: "g.t@leedsmadeupemail.com"
+      }
+    }
+  },
+  helloWorld() {
+    console.log('hello world');
+  }
+};
 
-## Browser Support
+// -------------------------------
+// With Optional Chaining
+// -------------------------------
+api_response?.helloWorld?.();
+// If the object method exists then call it inline
 
-<script src="https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/public/caniuse-embed.min.js"></script>
 
-<p class="ciu_embed" data-feature="mdn-javascript\_\_operators\_\_optional_chaining" data-periods="future_1,current,past_1,past_2" data-accessible-colours="true">
-<p>Data on support for the mdn-javascript\_\_operators\_\_optional_chaining feature across the major browsers</p>
-</p>
+// -------------------------------
+// Without Optional Chaining
+// -------------------------------
+
+if(api_response && typeof api_response.helloWorld === "function"){
+  api_response.helloWorld();
+}
+// First check if the method exists then seperately call that function
+```
+
+## What can't you do with it?
+
+One of the biggest things that you cannot do with this comes down to the rule that you cannot use it on the left hand side of any statements! So what does that mean - you can't **set** a property value only if it exists without doing a check first. Lets see an example of something that you **can't** do:
+
+```javascript
+const api_response = {
+  user: {
+    name: {
+      firstName: "Matthew",
+      lastName: "Shields"
+    },
+    currentCourse: false
+  }
+};
+
+api_response?.user?.name?.firstName = "Matt";
+// returns: Uncaught SyntaxError: Invalid left-hand side in assignment
+```
+
+What you can do though, is still use the optional chaining for a much tidier if statement condition. Then safe in the knowledge that it will only run in the event the last property exists, separately set that value.
+
+```javascript
+const api_response = {
+  user: {
+    name: {
+      firstName: "Matthew",
+      lastName: "Shields"
+    },
+    currentCourse: false
+  }
+};
+
+if(api_response?.user?.name?.firstName) {
+  api_response.user.name.firstName = "Matt";
+}
+// returns: "Matt"
+```
+
+## Requirements and Browser Support
+
+The support coverage for this feature has a really good 
+
+<picture>
+<source type="image/webp" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__optional_chaining-1629034552274.webp">
+<source type="image/png" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__optional_chaining-1629034552274.png">
+<img src="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__optional_chaining-1629034552274.jpg" alt="Data on support for the mdn-javascript__operators__optional_chaining feature across the major browsers from caniuse.com">
+</picture>
