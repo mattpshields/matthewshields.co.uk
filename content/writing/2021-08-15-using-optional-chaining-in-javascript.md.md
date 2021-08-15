@@ -1,7 +1,10 @@
 ---
 post_type: post
 title: Using Optional Chaining and Nullish Coalescing Operator in JavaScript
-short_description: TO DO
+short_description: >-
+  Using these two operators provides you some serious opportunities to write
+  robust code in a way that doesn't require additional libraries or harder to
+  read code. Well worth trying out!
 date: 2021-08-15T11:07:23.640Z
 slug: using-optional-chaining-and-nullish-coalescing-operator-in-javascript
 ---
