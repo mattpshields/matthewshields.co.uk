@@ -134,6 +134,33 @@ const tutorName = api_response?.user?.currentCourse?.tutorDetails?.name;
 
 Now in my opinion, this has really helped neaten this up and made it alot easier to write, read and maintain in the future when compared to the large chained if statement - and definitely a lot better then writing code which will recieve errors by not doing these sorts of checks.
 
+## Nullish Coalescing Operator as your backup
+
+I mentioned how the optional chaining operator would return undefined if it failed at any of its checks, but what if you don't want undefined to be your backup value?
+
+You could do a check after that point and set it to be a different value, however this may conflict with your use of a const variable and adds more code. What you could do though is pair the Optional Chaining Operator with the Nullish Coalescing Operator like so.
+
+```javascript
+const api_response = {
+  user: {
+    name: {
+      firstName: "Matthew",
+      lastName: "Shields"
+    },
+    currentCourse: false
+  }
+};
+
+const tutorName = api_response?.user?.currentCourse?.tutorDetails?.name ?? "Current Tutor N/A";
+// returns: "Current Tutor N/A"
+```
+
+In this event when the Optional Chaining Operator fails and returns undefined, the Nullish Coalescing Operator kicks in and so your backup value is set.
+
+You might be thinking though - this looks similar to the Or operator || - why can't I just use that? The key difference is that the Nullish Coalescing Operator responds to a smaller set of conditions, specifically only when the value is null or undefined. If you were to use the Or Operator and the value on the left was valid, but equated to 0, "", false etc then you may still end up using your backup value unintentionally.
+
+It doesn't mean that you may not ever use the Or Operator, in some situations that might be what you require. As a general default though I would use the Nullish Coalescing Operator first and change only when required.
+
 ## But what if I don't work with APIs or data?
 
 The data situation that we have looked at so far is just a context that I think demonstrates the concept of Optional Chaining in an easy to understand way. Even if you don't work with API responses though I can guarantee that there are still ways that it can help you.
@@ -265,4 +292,10 @@ The support coverage for this feature has a really good
 <source type="image/webp" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__optional_chaining-1629034552274.webp">
 <source type="image/png" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__optional_chaining-1629034552274.png">
 <img src="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__optional_chaining-1629034552274.jpg" alt="Data on support for the mdn-javascript__operators__optional_chaining feature across the major browsers from caniuse.com">
+</picture>
+
+<picture>
+<source type="image/webp" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__nullish_coalescing-1629034902817.webp">
+<source type="image/png" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__nullish_coalescing-1629034902817.png">
+<img src="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__nullish_coalescing-1629034902817.jpg" alt="Data on support for the mdn-javascript__operators__nullish_coalescing feature across the major browsers from caniuse.com">
 </picture>
