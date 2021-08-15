@@ -288,11 +288,15 @@ if(api_response?.user?.name?.firstName) {
 
 The support coverage for this feature has a really good coverage at this time, covering all major browsers with the exception of Internet Explorer.
 
+#### Optional Chaining
+
 <picture>
 <source type="image/webp" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__optional_chaining-1629034552274.webp">
 <source type="image/png" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__optional_chaining-1629034552274.png">
 <img src="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__optional_chaining-1629034552274.jpg" alt="Data on support for the mdn-javascript__operators__optional_chaining feature across the major browsers from caniuse.com">
 </picture>
+
+#### Nullish Coalescing Operator
 
 <picture>
 <source type="image/webp" srcset="https://caniuse.bitsofco.de/static/v1/mdn-javascript__operators__nullish_coalescing-1629034902817.webp">
