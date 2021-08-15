@@ -11,8 +11,6 @@ It is still a realtively new feature and only getting more widespread browser su
 
 ## So - What is Optional Chaining?
 
-
-
 ```javascript
 const api_response = {
   user: {
@@ -35,7 +33,12 @@ const api_response = {
 };
 ```
 
+
+
+## Browser Support
+
 <script src="https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/public/caniuse-embed.min.js"></script>
-<p class="ciu_embed" data-feature="mdn-javascript__operators__optional_chaining" data-periods="future_1,current,past_1,past_2" data-accessible-colours="true">
-<p>Data on support for the mdn-javascript__operators__optional_chaining feature across the major browsers</p>
+
+<p class="ciu_embed" data-feature="mdn-javascript\_\_operators\_\_optional_chaining" data-periods="future_1,current,past_1,past_2" data-accessible-colours="true">
+<p>Data on support for the mdn-javascript\_\_operators\_\_optional_chaining feature across the major browsers</p>
 </p>
