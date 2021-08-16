@@ -93,7 +93,7 @@ I have written up guides to both solutions though for you to take a look at if y
 
 Through a combination of using Live Share and ngrok we have been able to help each other, something that we are really passionate about as a team. At this point, we don't know how long we will be working from home, but this set up has taken one more challenge away from us. Even when we aren't though, I think our relationship with the idea of remote working will be fundamentally changed. If you have a team I would highly recommend that you think about what you can do to make it work as easily as possible for everyone.
 
-I think you can tell from this post that I am blown away by the Live Share extension if you are looking for something to try I couldn't recommend this enough. If you have any ideas of improvements we can make please also reach out to me on <a href="https://twitter.com/whatsthatweasel" target="_blank">Twitter</a>, I would love to hear them.
+I think you can tell from this post that I am blown away by the Live Share extension if you are looking for something to try I couldn't recommend this enough. If you have any ideas of improvements we can make please also reach out to me on <a href="https://twitter.com/MattShieldsDev" target="_blank">Twitter</a>, I would love to hear them.
 
 ## Shoutout
 

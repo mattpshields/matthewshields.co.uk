@@ -34,7 +34,7 @@ const config = {
     },
     {
       label: "Twitter",
-      url: "https://twitter.com/whatsthatweasel",
+      url: "https://twitter.com/MattShieldsDev",
       target: "_blank"
     },
     {

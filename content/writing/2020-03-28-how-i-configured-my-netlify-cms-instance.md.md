@@ -140,4 +140,4 @@ These are my top five configuration tips starting off with Netlify CMS. I hope t
 
 One of the things I have loved about Netlify CMS, that I know I have already mentioned, is it's simplicity. This is probably one of the main reasons that this isn't an essay of a post. It really just gives you what you need for basic content administration in the quickest way possible.
 
-Are there any options you think I have missed or improvements that I can make? Please let me know at <a href="<https://twitter.com/whatsthatweasel>" target="_blank">Twitter</a>
+Are there any options you think I have missed or improvements that I can make? Please let me know at <a href="<https://twitter.com/MattShieldsDev>" target="_blank">Twitter</a>

@@ -383,4 +383,4 @@ export default class PageTemplate extends React.Component {
 
 And there we have it, the ability to be able to flexibly build out pages using Netlify Variable Types and a single page template. This is actually powering most of the pages of my site and am looking at building out the component collection over time. I hope that this helps any of you struggling to pick up using Variable Types for the first time, I was really struggling to find any guides with how to use it with Gatsby specifically. I feel like this is my first big challenge overcome in taking this into being able to use with client projects.
 
-If there are any issues or improvements you can feel free to make a pull request to my demo repo or get in touch with me on <a href="https://twitter.com/whatsthatweasel" target="_blank">Twitter</a>, and I will update this post over time too.
+If there are any issues or improvements you can feel free to make a pull request to my demo repo or get in touch with me on <a href="https://twitter.com/MattShieldsDev" target="_blank">Twitter</a>, and I will update this post over time too.
