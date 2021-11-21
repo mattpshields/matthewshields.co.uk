@@ -24,6 +24,22 @@ collections:
       - { label: "Social Image", name: "social_image", widget: "image", required: false }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: notepad
+    label: "Notepad"
+    folder: "content/notepad"
+    media_folder: ''
+    public_folder: ''
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
+    fields:
+      - { label: "post_type", name: "post_type", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Short Description", name: "short_description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Cover Image", name: "cover", widget: "image", required: false }
+      - { label: "Social Image", name: "social_image", widget: "image", required: false }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: pages
     label: "Page"
     folder: "content/pages"
