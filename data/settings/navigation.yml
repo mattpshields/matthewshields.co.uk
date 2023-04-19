@@ -6,6 +6,6 @@ nav_items:
   - label: Writing
     path: /writing/
   - label: Photography
-    path: https://photography.matthewshields.co.uk/
+    path: "https://photography.matthewshields.co.uk/"
   - label: Setup
     path: /setup/
