@@ -7,3 +7,9 @@
   YARN_FLAGS = "--no-ignore-optional"
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
+
+[[redirects]]
+  from = "/photography/"
+  to = "https://celebrated-phoenix-839d0e.netlify.app/"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
