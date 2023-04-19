@@ -48,7 +48,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const postPage = path.resolve("src/templates/post.jsx");
   const pagePage = path.resolve("src/templates/page.jsx");
-  const albumPage = path.resolve("src/templates/album.jsx");
   const listingPage = path.resolve("./src/templates/listing.jsx");
 
   // Get a full list of markdown posts
